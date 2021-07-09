@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
+import type { SyntheticEvent } from 'react'
+
 import profilePic from '../images/Steven_Riggs_photo.jpg'
 
 import styles from '../styles/Welcome.module.scss'
@@ -10,11 +12,11 @@ const Welcome = () => {
   const [ hideProfilePic, setHideProfilePic ] = useState(true)
   const [ hidePopupDef, setHidePopupDef ] = useState(true)
 
-  const toggleProfilePic = event => {
+  const toggleProfilePic = (event: SyntheticEvent) => {
     setHideProfilePic(!hideProfilePic)
   }
 
-  const togglePopupDef = event => {
+  const togglePopupDef = (event: SyntheticEvent) => {
     setHidePopupDef(!hidePopupDef)
   }
 
