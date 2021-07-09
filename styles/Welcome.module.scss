@@ -1,0 +1,53 @@
+$white: #eee;
+$iconGreen: #24913d;
+$mauve: #c64c9d;
+
+
+.welcomeDiv {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+  font-size: 1.6rem;
+  cursor: default;
+
+  h1 {
+    span {
+      color: $iconGreen;
+    }
+  }
+
+  p {
+    max-width: 20ch;
+    line-height: 1.8;
+    font-size: 0.8em;
+
+    a {
+      color: $mauve;
+      cursor: help;
+    }
+  }
+}
+
+.imageDiv {
+  width: 1008px * 0.2;
+  height: 1344px * 0.2;
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  z-index: 1;
+}
+
+.popupDef {
+  max-width: 25ch;
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+  z-index: 2;
+  background-color: $white;
+  padding: 0.5em;;
+}
