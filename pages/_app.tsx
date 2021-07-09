@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import type { AppProps } from 'next/app'
 
+import Navbar from '../components/navbar'
+
 import '../styles/globals.css'
 
 
@@ -23,6 +25,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
+
+      <Navbar />
+
+      <a name='top' />
 
       <main>
         <Component {...pageProps} />

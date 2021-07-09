@@ -1,6 +1,4 @@
-$white: #eee;
-$iconGreen: #24913d;
-$mauve: #c64c9d;
+@use 'colorDefs';
 
 
 .welcomeDiv {
@@ -11,13 +9,13 @@ $mauve: #c64c9d;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: $white;
+  color: colorDefs.$white;
   font-size: 1.6rem;
   cursor: default;
 
   h1 {
     span {
-      color: $iconGreen;
+      color: colorDefs.$iconGreen;
     }
   }
 
@@ -27,7 +25,7 @@ $mauve: #c64c9d;
     font-size: 0.8em;
 
     a {
-      color: $mauve;
+      color: colorDefs.$mauve;
       cursor: help;
     }
   }
@@ -48,6 +46,6 @@ $mauve: #c64c9d;
   bottom: 25%;
   right: 10%;
   z-index: 2;
-  background-color: $white;
+  background-color: colorDefs.$white;
   padding: 0.5em;;
 }
