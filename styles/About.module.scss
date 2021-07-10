@@ -5,6 +5,7 @@
 .aboutDiv {
   @include divSpecs.divSpecs;
 
+  flex-direction: column;
   background-color: colorDefs.$white;
   justify-content: space-around;
   position: relative;
@@ -21,9 +22,46 @@
   }
 }
 
-.imageDiv {
-  width: 1008px * 0.225;
-  height: 1344px * 0.225;
+.detailsDiv {
+  display: grid;
+  grid-template:
+    'professionalInterests ... nonProfessionalInterests' 1fr
+    '. profilePic profilePic profilePic .' 1fr
+    '. profilePic profilePic profilePic .' 1fr
+    '. profilePic profilePic profilePic .' 1fr
+    'programmingLanguages . funFacts . personalInfo' 1fr
+    / repeat(5, 1fr);
+
+  .imageDiv {
+    width: 1008px * 0.1;
+    height: 1344px -0.1;
+
+    &[id=croppedProfile] {
+      grid-area: profilePic;
+      width: 1008px * 0.225;
+      height: 1344px * 0.225;
+    }
+
+    &[id=professionalInterests] {
+      grid-area: professionalInterests;
+    }
+
+    &[id=nonProfessionalInterests] {
+      grid-area: nonProfessionalInterests;
+    }
+
+    &[id=programmingLanguages] {
+      grid-area: programmingLanguages;
+    }
+
+    &[id=funFacts] {
+      grid-area: funFacts;
+    }
+
+    &[id=personalInfo] {
+      grid-area: personalInfo;
+    }
+  }
 }
 
 .headingSpanGreen {

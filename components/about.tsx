@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import { useEffect } from 'react'
 
-import profilePic from '../images/Steven_Riggs_photo.jpg'
+import croppedProfilePic from '../assets/images/Steven_Riggs_photo_cropped.png'
+import { aboutMeText } from '../assets/documents/aboutMe'
 
 import styles from '../styles/About.module.scss'
 
@@ -36,13 +37,26 @@ const About = () => {
         {aboutMeString()}
       </h2>
 
-      <div className={styles.imageDiv}>
-        <Image src={profilePic} alt='Steven Riggs' />
+      <div className={styles.detailsDiv}>
+        <div id='professionalInterests' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
+        <div id='nonProfessionalInterests' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
+        <div id='croppedProfile' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
+        <div id='programmingLanguages' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
+        <div id='funFacts' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
+        <div id='personalInfo' className={styles.imageDiv}>
+          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        </div>
       </div>
-
-      <p>
-        Fugit accumsan eget at pharetra suas duis iriure nisi eius recteque et convenire cotidieque libero! Leo mutat duo pharetra. Praesent iure duo forensibus audiam. Per bibendum erant ius facilisis eius pretium ad quodsi te auctor an. Bibendum dui moderatius primis pertinax in eleifend vulputate numquam mediocrem rutrum quaestio voluptatibus ex? Integre error ei ad habitant adhuc iuvaret massa laboramus sagittis dicant delicata efficiendi dis auctor? Felis audiam habitant lectus sapien urbanitas. Sint constituto his veniam accusam congue explicari consectetur oportere? Magna torquatos recusabo error exerci on sint libero quos.
-      </p>
     </div>
   )
 }
