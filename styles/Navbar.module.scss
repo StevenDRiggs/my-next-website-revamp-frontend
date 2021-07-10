@@ -1,6 +1,12 @@
 @use 'colorDefs';
 
 
+@mixin highlightLink {
+  background-color: colorDefs.$mauve;
+  color: colorDefs.$black;
+}
+
+
 .navbar {
   color: colorDefs.$white;
   font-weight: 700;
@@ -20,9 +26,12 @@
       padding: 0.8em;
 
       &:hover {
-        background-color: colorDefs.$mauve;
-        color: colorDefs.$black;
+        @include highlightLink;
       }
     }
   }
+}
+
+.activeLink {
+  @include highlightLink;
 }

@@ -12,7 +12,7 @@ const Navbar = () => {
   const newActiveNavLink = (event: SyntheticEvent) => {
     Array.from(event.target.parentElement.parentElement.children).forEach(link => link.className = '')
 
-    event.target.parentElement.className = 'activeLink'
+    event.target.parentElement.className = styles.activeLink
   }
 
   return (
