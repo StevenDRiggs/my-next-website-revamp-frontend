@@ -10,36 +10,38 @@ const white = '#eee'
 
 const Navbar = () => {
   const newActiveNavLink = (event: SyntheticEvent) => {
-    Array.from(event.target.parentElement.parentElement.children).forEach(link => link.className = '')
+    const target = event.target as Element
 
-    event.target.parentElement.className = styles.activeLink
+    Array.from(target.parentElement.parentElement.children).forEach(link => link.className = '')
+
+    target.parentElement.className = styles.activeLink
   }
 
   return (
     <div className={`bgDark ${styles.navbar}`}>
       <ul>
         <a href='#top' onClick={newActiveNavLink}>
-          <li name='home'>
+          <li>
             HOME
           </li>
         </a>
         <a href='#about' onClick={newActiveNavLink}>
-          <li name='about'>
+          <li>
             ABOUT
           </li>
         </a>
         <a href='#portfolio' onClick={newActiveNavLink}>
-          <li name='portfolio'>
+          <li>
             PORTFOLIO
           </li>
         </a>
         <a href='#blog' onClick={newActiveNavLink}>
-          <li name='blog'>
+          <li>
             BLOG
           </li>
         </a>
         <a href='#contact' onClick={newActiveNavLink}>
-          <li name='contact'>
+          <li>
             CONTACT
           </li>
         </a>
