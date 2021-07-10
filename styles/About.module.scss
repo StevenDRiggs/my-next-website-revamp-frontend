@@ -1,0 +1,35 @@
+@use 'colorDefs';
+@use 'divSpecs';
+
+
+.aboutDiv {
+  @include divSpecs.divSpecs;
+
+  background-color: colorDefs.$white;
+  justify-content: space-around;
+  position: relative;
+  color: colorDefs.$black;
+
+  h2 {
+    position: absolute;
+    top: 13%;
+    font-size: 1.9rem;
+  }
+
+  p {
+    max-width: 38ch;
+  }
+}
+
+.imageDiv {
+  width: 1008px * 0.225;
+  height: 1344px * 0.225;
+}
+
+.headingSpanGreen {
+  color: colorDefs.$iconGreen;
+}
+
+.headingSpanMauve {
+  color: colorDefs.$mauve;
+}
