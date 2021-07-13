@@ -38,23 +38,23 @@ const About = () => {
       </h2>
 
       <div className={styles.detailsDiv}>
-        <div id='professionalInterests' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='profilePic'>
+          <Image src={croppedProfilePic} />
         </div>
-        <div id='nonProfessionalInterests' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='myLifeNow'>
+          <p>my life now</p>
         </div>
-        <div id='croppedProfile' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='personalInterests'>
+          <p>personal interests</p>
         </div>
-        <div id='programmingLanguages' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='howIGotStarted'>
+          <p>how i got started</p>
         </div>
-        <div id='funFacts' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='nextThingsToLearn'>
+          <p>next things to learn</p>
         </div>
-        <div id='personalInfo' className={styles.imageDiv}>
-          <Image src={croppedProfilePic} alt='Steven Riggs' />
+        <div id='skills'>
+          <p>skills</p>
         </div>
       </div>
     </div>

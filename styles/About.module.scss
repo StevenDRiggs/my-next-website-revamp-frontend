@@ -23,43 +23,41 @@
 }
 
 .detailsDiv {
+  width: 50vw;
+
   display: grid;
-  grid-template:
-    'professionalInterests ... nonProfessionalInterests' 1fr
-    '. profilePic profilePic profilePic .' 1fr
-    '. profilePic profilePic profilePic .' 1fr
-    '. profilePic profilePic profilePic .' 1fr
-    'programmingLanguages . funFacts . personalInfo' 1fr
-    / repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    '. . myLifeNow . .'
+    '. profilePic profilePic profilePic .'
+    'personalInterests profilePic profilePic profilePic howIGotStarted'
+    '. profilePic profilePic profilePic .'
+    '. nextThingsToLearn . skills . ';
 
-  .imageDiv {
-    width: 1008px * 0.1;
-    height: 1344px -0.1;
+  div {
+    &[id=skills] {
+      grid-area: skills;
+    }
 
-    &[id=croppedProfile] {
+    &[id=nextThingsToLearn] {
+      grid-area: nextThingsToLearn;
+    }
+
+    &[id=profilePic] {
       grid-area: profilePic;
-      width: 1008px * 0.225;
-      height: 1344px * 0.225;
     }
 
-    &[id=professionalInterests] {
-      grid-area: professionalInterests;
+    &[id=personalInterests] {
+      grid-area: personalInterests;
     }
 
-    &[id=nonProfessionalInterests] {
-      grid-area: nonProfessionalInterests;
+    &[id=howIGotStarted] {
+      grid-area: howIGotStarted;
     }
 
-    &[id=programmingLanguages] {
-      grid-area: programmingLanguages;
-    }
-
-    &[id=funFacts] {
-      grid-area: funFacts;
-    }
-
-    &[id=personalInfo] {
-      grid-area: personalInfo;
+    &[id=myLifeNow] {
+      grid-area: myLifeNow;
     }
   }
 }
