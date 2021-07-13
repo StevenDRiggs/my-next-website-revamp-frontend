@@ -69,3 +69,20 @@
 .headingSpanMauve {
   color: colorDefs.$mauve;
 }
+
+.icon {
+  font-size: 2rem;
+  color: colorDefs.$mauve;
+
+  &:hover {
+    color: colorDefs.$iconGreen;
+  }
+
+  &:nth-child(even) {
+    color: colorDefs.$iconGreen;
+
+    &:hover {
+      color: colorDefs.$mauve;
+    }
+  }
+}

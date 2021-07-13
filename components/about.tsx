@@ -41,20 +41,20 @@ const About = () => {
         <div id='profilePic'>
           <Image src={croppedProfilePic} />
         </div>
-        <div id='myLifeNow'>
-          <p>my life now</p>
+        <div id='myLifeNow' className={styles.icon}>
+          <i class={`fas fa-user-friends`}></i>
         </div>
-        <div id='personalInterests'>
-          <p>personal interests</p>
+        <div id='personalInterests' className={styles.icon}>
+          <i class={`fas fa-gamepad`}></i>
         </div>
-        <div id='howIGotStarted'>
-          <p>how i got started</p>
+        <div id='howIGotStarted' className={styles.icon}>
+          <i class={`fas fa-pencil-alt`}></i>
         </div>
-        <div id='nextThingsToLearn'>
-          <p>next things to learn</p>
+        <div id='nextThingsToLearn' className={styles.icon}>
+          <i class={`fas fa-school`}></i>
         </div>
-        <div id='skills'>
-          <p>skills</p>
+        <div id='skills' className={styles.icon}>
+          <i class={`fas fa-terminal`}></i>
         </div>
       </div>
     </div>
