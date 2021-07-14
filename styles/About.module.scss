@@ -13,7 +13,7 @@
 
   h2 {
     position: absolute;
-    top: 13%;
+    top: 6%;
     font-size: 1.9rem;
   }
 
@@ -24,10 +24,19 @@
 
 .detailsDiv {
   width: 50vw;
+  position: relative;
+  top: 6%;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  column-gap: 2rem;
   grid-template-areas:
     '. . myLifeNow . .'
     '. profilePic profilePic profilePic .'
