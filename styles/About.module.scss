@@ -27,12 +27,6 @@
   position: relative;
   top: 6%;
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -43,8 +37,13 @@
     'personalInterests profilePic profilePic profilePic howIGotStarted'
     '. profilePic profilePic profilePic .'
     '. nextThingsToLearn . skills . ';
+  justify-content: center;
 
   div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &[id=skills] {
       grid-area: skills;
     }
@@ -81,17 +80,66 @@
 
 .icon {
   font-size: 2rem;
-  color: colorDefs.$mauve;
+  position: relative;
 
-  &:hover {
-    color: colorDefs.$iconGreen;
+  div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h6 {
+      margin: 0;
+      width: 8ch;
+      font-size: 1rem;
+    }
   }
 
   &:nth-child(even) {
     color: colorDefs.$iconGreen;
 
-    &:hover {
+    h6 {
       color: colorDefs.$mauve;
     }
+
+    &:hover {
+      color: colorDefs.$mauve;
+
+      h6 {
+        color: colorDefs.$iconGreen;
+      }
+    }
   }
+
+  &:nth-child(odd) {
+    color: colorDefs.$mauve;
+
+    h6 {
+      color: colorDefs.$iconGreen;
+    }
+
+    &:hover {
+      color: colorDefs.$iconGreen;
+
+      h6 {
+        color: colorDefs.$mauve;
+      }
+    }
+  }
+}
+
+.aboutText {
+  font-size: 0.9rem;
+  color: colorDefs.$black;
+  position: absolute;
+  width: 38ch;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.leftText {
+  left: 15%;
+}
+
+.rightText {
+  right: 15%;
 }

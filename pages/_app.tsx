@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <script src="https://kit.fontawesome.com/4c7cac2126.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/4c7cac2126.js" crossOrigin="anonymous"></script>
       </Head>
 
       <Navbar />
