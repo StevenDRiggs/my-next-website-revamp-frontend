@@ -26,7 +26,7 @@ const Welcome = () => {
         <h1>Hello,<br />I'm <span onMouseEnter={toggleProfilePic} onMouseLeave={toggleProfilePic}>Steven</span></h1>
 
         <p>
-          A <a href='https://www.w3schools.com/whatis/whatis_fullstack.asp' target='_blank' onMouseEnter={togglePopupDef} onMouseLeave={togglePopupDef}>Full Stack Developer</a><br />Here for Your Needs
+          A <a href='https://www.w3schools.com/whatis/whatis_fullstack.asp' target='_blank' onMouseEnter={togglePopupDef} onMouseLeave={togglePopupDef}>Full Stack Developer</a><br /><a className='hiddenLink' href='#about'>Here for Your Needs</a>
         </p>
       </div>
 

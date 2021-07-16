@@ -71,11 +71,11 @@
 }
 
 .headingSpanGreen {
-  color: colorDefs.$iconGreen;
+  color: colorDefs.$skyBlue;
 }
 
 .headingSpanMauve {
-  color: colorDefs.$mauve;
+  color: colorDefs.$lightBeige;
 }
 
 .icon {
@@ -95,33 +95,33 @@
   }
 
   &:nth-child(even) {
-    color: colorDefs.$iconGreen;
+    color: colorDefs.$skyBlue;
 
     h6 {
-      color: colorDefs.$mauve;
+      color: colorDefs.$lightBeige;
     }
 
     &:hover {
-      color: colorDefs.$mauve;
+      color: colorDefs.$lightBeige;
 
       h6 {
-        color: colorDefs.$iconGreen;
+        color: colorDefs.$skyBlue;
       }
     }
   }
 
   &:nth-child(odd) {
-    color: colorDefs.$mauve;
+    color: colorDefs.$lightBeige;
 
     h6 {
-      color: colorDefs.$iconGreen;
+      color: colorDefs.$skyBlue;
     }
 
     &:hover {
-      color: colorDefs.$iconGreen;
+      color: colorDefs.$skyBlue;
 
       h6 {
-        color: colorDefs.$mauve;
+        color: colorDefs.$lightBeige;
       }
     }
   }

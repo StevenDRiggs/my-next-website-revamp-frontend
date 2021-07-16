@@ -13,7 +13,7 @@
 
   h1 {
     span {
-      color: colorDefs.$iconGreen;
+      color: colorDefs.$skyBlue;
     }
   }
 
@@ -23,8 +23,13 @@
     font-size: 0.8em;
 
     a {
-      color: colorDefs.$mauve;
+      color: colorDefs.$lightBeige;
       cursor: help;
+
+      &[class=hiddenLink] {
+        color: colorDefs.$white;
+        cursor: default;
+      }
     }
   }
 }
