@@ -3,14 +3,9 @@ import type { SyntheticEvent } from 'react'
 import styles from '../styles/Navbar.module.scss'
 
 
-const black = '#111'
-const mauve = '#c64c9d'
-const white = '#eee'
-
-
 const Navbar = () => {
   const newActiveNavLink = (event: SyntheticEvent) => {
-    const target = event.target as Element
+    const target = event.target as HTMLElement
 
     Array.from(target.parentElement.parentElement.children).forEach(link => link.className = '')
 
