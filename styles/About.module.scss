@@ -5,16 +5,16 @@
 .aboutDiv {
   @include divSpecs.divSpecs;
 
+  padding-top: 11vh;
   flex-direction: column;
   background-color: colorDefs.$white;
-  justify-content: space-around;
+  justify-content: flex-start;
   position: relative;
   color: colorDefs.$black;
 
   h2 {
-    position: absolute;
-    top: 6%;
     font-size: 1.9rem;
+    margin: 0;
   }
 
   p {
@@ -23,7 +23,7 @@
 }
 
 .detailsDiv {
-  width: 50vw;
+  width: 40vw;
   position: relative;
   top: 6%;
 
@@ -90,7 +90,7 @@
     h6 {
       margin: 0;
       width: 8ch;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -130,16 +130,18 @@
 .aboutText {
   font-size: 0.9rem;
   color: colorDefs.$black;
-  position: absolute;
   width: 38ch;
-  z-index: 1;
+  position: absolute;
   visibility: hidden;
+  z-index: 1;
 }
 
-.leftText {
-  left: 15%;
-}
-
-.rightText {
-  right: 15%;
+.hiderBlock {
+  display: block;
+  position: absolute;
+  grid-area: profilePic;
+  width: 100%;
+  height: 100%;
+  background-color: colorDefs.$white;
+  z-index: -1;
 }

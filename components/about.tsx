@@ -35,26 +35,28 @@ const About = () => {
 
   const showAboutText = (event: SyntheticEvent) => {
     const target = event.target as HTMLElement
+    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textP = target.querySelector('p') as HTMLElement || target.parentElement.querySelector('p') as HTMLElement || target.parentElement.parentElement.querySelector('p') as HTMLElement
-    const icon = target.querySelector('div.iconGroup') as HTMLElement || target.parentElement.querySelector('div.iconGroup') as HTMLElement || target.parentElement.parentElement.querySelector('div.iconGroup') as HTMLElement
-    const profilePic = document.querySelector('#profilePic') as HTMLElement
+    const textP = document.querySelector(`p[data-name=${targetId}]`) as HTMLElement
+    const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
+    const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
-    profilePic.style.opacity = '0.2'
-    icon.style.opacity = '0.2'
+    hiderBlock.style.zIndex = '1'
+    icon.style.opacity = '0.5'
     textP.style.visibility = 'visible'
   }
 
   const hideAboutText = (event: SyntheticEvent) => {
     const target = event.target as HTMLElement
+    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textP = target.parentElement.querySelector('p') as HTMLElement || target.parentElement.parentElement.querySelector('p') as HTMLElement
-    const icon = target.querySelector('div.iconGroup') as HTMLElement || target.parentElement.querySelector('div.iconGroup') as HTMLElement || target.parentElement.parentElement.querySelector('div.iconGroup') as HTMLElement
-    const profilePic = document.querySelector('#profilePic') as HTMLElement
+    const textP = document.querySelector(`p[data-name=${targetId}]`) as HTMLElement
+    const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
+    const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
     textP.style.visibility = 'hidden'
     icon.style.opacity = '1.0'
-    profilePic.style.opacity = '1.0'
+    hiderBlock.style.zIndex = '-1'
   }
 
   return (
@@ -65,48 +67,40 @@ const About = () => {
 
       <div className={styles.detailsDiv}>
         <div id='profilePic'>
+          <div id='hiderBlock' className={styles.hiderBlock} />
           <Image src={croppedProfilePic} />
+          <p data-name='myLifeNow' className={styles.aboutText}>{MY_LIFE_NOW}</p>
+          <p data-name='personalInterests' className={`${styles.aboutText}`}>{PERSONAL_INTERESTS}</p>
+          <p data-name='howIGotStarted' className={`${styles.aboutText}`}>{HOW_I_GOT_STARTED}</p>
+          <p data-name='nextThingsToLearn' className={styles.aboutText}>{NEXT_THINGS_TO_LEARN}</p>
+          <p data-name='skills' className={styles.aboutText}>{SKILLS}</p>
         </div>
+
         <div id='myLifeNow' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
-          <p className={styles.aboutText}>
-            {MY_LIFE_NOW}
-          </p>
           <div className='iconGroup'>
             <h6>My Life Now</h6>
             <i className={`fas fa-user-friends`}></i>
           </div>
         </div>
         <div id='personalInterests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
-          <p className={`${styles.aboutText} ${styles.leftText}`}>
-            {PERSONAL_INTERESTS}
-          </p>
           <div className='iconGroup'>
             <h6>Personal Interests</h6>
             <i className={`fas fa-gamepad`}></i>
           </div>
         </div>
         <div id='howIGotStarted' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
-          <p className={`${styles.aboutText} ${styles.rightText}`}>
-            {HOW_I_GOT_STARTED}
-          </p>
           <div className='iconGroup'>
             <h6>How I Got Started</h6>
             <i className={`fas fa-pencil-alt`}></i>
           </div>
         </div>
         <div id='nextThingsToLearn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
-          <p className={styles.aboutText}>
-            {NEXT_THINGS_TO_LEARN}
-          </p>
           <div className='iconGroup'>
             <h6>Next Things I Want to Learn</h6>
             <i className={`fas fa-school`}></i>
           </div>
         </div>
         <div id='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
-          <p className={styles.aboutText}>
-            {SKILLS}
-          </p>
           <div className='iconGroup'>
             <h6>My Skills</h6>
             <i className={`fas fa-terminal`}></i>
