@@ -22,15 +22,15 @@ const About = () => {
     const headingToColorize = document.querySelectorAll('.colorizedHeading span')
 
     let index = Math.floor(Math.random() * (headingToColorize.length))
-    while (Array.from(headingToColorize[index].classList).includes(styles.headingSpanGreen) || Array.from(headingToColorize[index].classList).includes(styles.headingSpanMauve)) {
+    while (Array.from(headingToColorize[index].classList).includes(styles.headingSpanSkyBlue) || Array.from(headingToColorize[index].classList).includes(styles.headingSpanBeige)) {
       index = Math.floor(Math.random() * (headingToColorize.length))
     }
-    headingToColorize[index].classList.add(styles.headingSpanGreen)
+    headingToColorize[index].classList.add(styles.headingSpanSkyBlue)
 
-    while (Array.from(headingToColorize[index].classList).includes(styles.headingSpanGreen) || Array.from(headingToColorize[index].classList).includes(styles.headingSpanMauve)) {
+    while (Array.from(headingToColorize[index].classList).includes(styles.headingSpanSkyBlue) || Array.from(headingToColorize[index].classList).includes(styles.headingSpanBeige)) {
       index = Math.floor(Math.random() * (headingToColorize.length))
     }
-    headingToColorize[index].classList.add(styles.headingSpanMauve)
+    headingToColorize[index].classList.add(styles.headingSpanBeige)
   })
 
   const showAboutText = (event: SyntheticEvent) => {
