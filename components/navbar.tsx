@@ -28,9 +28,9 @@ const Navbar = () => {
     const targetLink = document.querySelector(`#${id}`) as HTMLElement
     const navlinks = Array.from(document.querySelectorAll(`.${styles.navlink}`))
 
-    navlinks.forEach(link => link.className = '')
+    navlinks.forEach(link => link.classList.remove(styles.activeLink))
 
-    targetLink.className = styles.activeLink
+    targetLink.classList.add(styles.activeLink)
   }
 
   const { currentPage } = useAppSelector(state => state)
