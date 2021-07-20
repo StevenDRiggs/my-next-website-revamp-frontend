@@ -4,10 +4,10 @@ import { changeCurrentPage } from '../actions/navbarActions'
 
 
 const navbarReducer = createReducer('', builder => {
-  builder
-    .addCase(changeCurrentPage, (state, action) => {
-      return action.payload
-    })
+  //builder
+  //  .addCase(changeCurrentPage, (state, action) => {
+  //    return action.payload
+  //  })
 })
 
 

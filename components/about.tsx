@@ -3,13 +3,16 @@ import { useEffect } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
+import type { ComponentProps } from '../pages/index'
+
 import { MY_LIFE_NOW, PERSONAL_INTERESTS, HOW_I_GOT_STARTED, NEXT_THINGS_TO_LEARN, SKILLS } from '../assets/documents/aboutMe'
 import croppedProfilePic from '../assets/images/Steven_Riggs_photo_cropped.png'
 
 import styles from '../styles/About.module.scss'
 
 
-const About = () => {
+const About = (props: ComponentProps) => {
+  const myId = props['id']
   const aboutMeString = () => {
     return Array.from('About Me').map((chr, i) => (
       chr === ' ' ?
@@ -60,7 +63,7 @@ const About = () => {
   }
 
   return (
-    <div id='about' className={styles.aboutDiv}>
+    <div id={myId} className={styles.aboutDiv}>
       <h2 className='colorizedHeading'>
         {aboutMeString()}
       </h2>

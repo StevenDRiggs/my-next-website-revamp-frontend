@@ -3,12 +3,15 @@ import { useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
+import type { ComponentProps } from '../pages/index'
+
 import profilePic from '../assets/images/Steven_Riggs_photo.jpg'
 
 import styles from '../styles/Welcome.module.scss'
 
 
-const Welcome = () => {
+const Welcome = (props: ComponentProps) => {
+  const myId = props['id']
   const [ hideProfilePic, setHideProfilePic ] = useState(true)
   const [ hidePopupDef, setHidePopupDef ] = useState(true)
 
@@ -22,7 +25,7 @@ const Welcome = () => {
 
   return (
     <>
-      <div className={`bgDark ${styles.welcomeDiv}`}>
+      <div id={myId} className={`bgDark ${styles.welcomeDiv}`}>
         <h1>Hello,<br />I'm <span onMouseEnter={toggleProfilePic} onMouseLeave={toggleProfilePic}>Steven</span></h1>
 
         <p>

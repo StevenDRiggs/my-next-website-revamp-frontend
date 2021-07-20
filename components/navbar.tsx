@@ -1,76 +1,76 @@
+import { useState } from 'react'
 import { useEffect } from 'react'
+import useIntersectionObserver from '@react-hook/intersection-observer'
 
 import type { SyntheticEvent } from 'react'
-
-import { useAppSelector } from '../redux/hooks'
 
 import styles from '../styles/Navbar.module.scss'
 
 
-export const pageIds = [
-  'top',
+const pageIds = [
+  'home',
   'about',
   'portfolio',
   'blog',
   'contact',
 ]
 
+const intersectionThreshold = 0.5
+
 
 const Navbar = () => {
-  const returnEventTarget = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
+  let isIntersecting
 
-    return target
-  }
+  const [ homeDivRef, setHomeDivRef ] = useState()
+  const homeIsIntersecting = useIntersectionObserver(homeDivRef, {threshold: intersectionThreshold})['isIntersecting']
 
-  const newActiveNavlink = (target: HTMLElement) => {
-    const id: string = target.id || target.parentElement.id
-    const targetLink = document.querySelector(`#${id}`) as HTMLElement
+  const [ aboutDivRef, setAboutDivRef ] = useState()
+  const aboutIsIntersecting = useIntersectionObserver(aboutDivRef, {threshold: intersectionThreshold})['isIntersecting']
+
+  const [ portfolioDivRef, setPortfolioDivRef ] = useState()
+  const portfolioIsIntersecting = useIntersectionObserver(portfolioDivRef, {threshold: intersectionThreshold})['isIntersecting']
+
+  const [ blogDivRef, setBlogDivRef ] = useState()
+  const blogIsIntersecting = useIntersectionObserver(blogDivRef, {threshold: intersectionThreshold})['isIntersecting']
+
+  const [ contactDivRef, setContactDivRef ] = useState()
+  const contactIsIntersecting = useIntersectionObserver(contactDivRef, {threshold: intersectionThreshold})['isIntersecting']
+
+  const newActiveNavlink = () => {
     const navlinks = Array.from(document.querySelectorAll(`.${styles.navlink}`))
+    navlinks.forEach(navlink => {
+      navlink.classList.remove(styles.activeLink)
+    })
 
-    navlinks.forEach(link => link.classList.remove(styles.activeLink))
+    pageIds.forEach((pageId: string) => {
+      if (eval(`${pageId}IsIntersecting`)) {
+        document.getElementById(pageId).classList.add(styles.activeLink)
 
-    targetLink.classList.add(styles.activeLink)
+        return
+      }
+    })
   }
-
-  const { currentPage } = useAppSelector(state => state)
 
   useEffect(() => {
-    if (!!currentPage) {
-      const target = document.querySelector(`#${currentPage}`) as HTMLElement
+    const referencedDivs = pageIds.map((pageId: string) => (
+      document.getElementById(pageId)
+    )).filter(elem => elem !== null)
 
-      newActiveNavlink(target)
-    }
+    referencedDivs.forEach((referencedDiv: HTMLElement) => {
+      eval(`set${referencedDiv.id[0].toUpperCase() + referencedDiv.id.slice(1)}DivRef(referencedDiv)`)
+    })
   })
 
   return (
     <div className={`bgDark ${styles.navbar}`}>
       <ul>
-        <a id='navlinkHome' className={styles.navlink} href='#top' onClick={(event: SyntheticEvent) => newActiveNavlink(returnEventTarget(event))}>
-          <li>
-            HOME
-          </li>
-        </a>
-        <a id='navlinkAbout' className={styles.navlink} href='#about' onClick={(event: SyntheticEvent) => newActiveNavlink(returnEventTarget(event))}>
-          <li>
-            ABOUT
-          </li>
-        </a>
-        <a id='navlinkPortfolio' className={styles.navlink} href='#portfolio' onClick={(event: SyntheticEvent) => newActiveNavlink(returnEventTarget(event))}>
-          <li>
-            PORTFOLIO
-          </li>
-        </a>
-        <a id='navlinkBlog' className={styles.navlink} href='#blog' onClick={(event: SyntheticEvent) => newActiveNavlink(returnEventTarget(event))}>
-          <li>
-            BLOG
-          </li>
-        </a>
-        <a id='navlinkContact' className={styles.navlink} href='#contact' onClick={(event: SyntheticEvent) => newActiveNavlink(returnEventTarget(event))}>
-          <li>
-            CONTACT
-          </li>
-        </a>
+        {pageIds.map((pageId: string) => (
+          <a key={pageId} id={`navlink_${pageId}`} className={`${styles.navlink}${eval(pageId + 'IsIntersecting') ? ' ' + styles.activeLink : null}`} href={`#${pageId}`} onClick={newActiveNavlink}>
+            <li>
+              {pageId.toUpperCase()}
+            </li>
+          </a>
+        ))}
       </ul>
     </div>
   )

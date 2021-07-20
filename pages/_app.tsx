@@ -32,8 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Navbar />
 
-      <a id='top' />
-
       <main>
         <Component {...pageProps} />
       </main>
