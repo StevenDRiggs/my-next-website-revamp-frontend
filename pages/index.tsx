@@ -1,5 +1,6 @@
 import Welcome from '../components/welcome'
 import About from '../components/about'
+import Portfolio from '../components/portfolio'
 
 
 export type ComponentProps = {
@@ -10,9 +11,11 @@ export type ComponentProps = {
 const Home = () => {
   return (
     <div>
-      <Welcome id='home' />
+      <Welcome />
 
-      <About id='about' />
+      <About />
+
+      <Portfolio />
     </div>
   )
 }

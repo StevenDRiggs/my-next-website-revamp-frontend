@@ -10,8 +10,7 @@ import profilePic from '../assets/images/Steven_Riggs_photo.jpg'
 import styles from '../styles/Welcome.module.scss'
 
 
-const Welcome = (props: ComponentProps) => {
-  const myId = props['id']
+const Welcome = () => {
   const [ hideProfilePic, setHideProfilePic ] = useState(true)
   const [ hidePopupDef, setHidePopupDef ] = useState(true)
 
@@ -25,7 +24,7 @@ const Welcome = (props: ComponentProps) => {
 
   return (
     <>
-      <div id={myId} className={`bgDark ${styles.welcomeDiv}`}>
+      <div id='home' className={`bgDark ${styles.welcomeDiv}`}>
         <h1>Hello,<br />I'm <span onMouseEnter={toggleProfilePic} onMouseLeave={toggleProfilePic}>Steven</span></h1>
 
         <p>

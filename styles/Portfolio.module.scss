@@ -1,0 +1,20 @@
+@use 'colorDefs';
+@use 'divSpecs';
+
+
+.portfolioDiv {
+  @include divSpecs.divSpecs;
+}
+
+.portfolioGrid {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  div {
+    border: 1px black solid;
+    width: 20vw;
+    height: 20vh;
+  }
+}

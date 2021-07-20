@@ -11,8 +11,7 @@ import croppedProfilePic from '../assets/images/Steven_Riggs_photo_cropped.png'
 import styles from '../styles/About.module.scss'
 
 
-const About = (props: ComponentProps) => {
-  const myId = props['id']
+const About = () => {
   const aboutMeString = () => {
     return Array.from('About Me').map((chr, i) => (
       chr === ' ' ?
@@ -63,7 +62,7 @@ const About = (props: ComponentProps) => {
   }
 
   return (
-    <div id={myId} className={styles.aboutDiv}>
+    <div id='about' className={styles.aboutDiv}>
       <h2 className='colorizedHeading'>
         {aboutMeString()}
       </h2>
