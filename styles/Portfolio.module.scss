@@ -4,17 +4,79 @@
 
 .portfolioDiv {
   @include divSpecs.divSpecs;
+
+  background-color: colorDefs.$lightGray;
+  flex-direction: column;
+
+  a {
+    color: colorDefs.$white;
+    text-decoration-line: underline;
+  }
 }
 
 .portfolioGrid {
   max-width: 80vw;
-  max-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5%;
+  row-gap: 3%;
+}
 
-  div {
-    border: 1px black solid;
-    width: 20vw;
-    height: 20vh;
+.portfolioItem {
+  width: 15vw;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  h3 {
+    color: colorDefs.$black;
+  }
+}
+
+.projectConnections {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  & * {
+    background-color: colorDefs.$white50;
+  }
+}
+
+.faIcon {
+  width: 20%;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    padding-bottom: 100%;
+  }
+}
+
+.gitHubMark {
+  width: 20%;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    padding-bottom: 100%;
+  }
+}
+
+.youTubeIcon {
+  width: 20%;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    padding-bottom: 100%;
   }
 }
