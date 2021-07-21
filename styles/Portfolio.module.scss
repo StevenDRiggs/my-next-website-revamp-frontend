@@ -5,7 +5,7 @@
 .portfolioDiv {
   @include divSpecs.divSpecs;
 
-  background-color: colorDefs.$lightGray;
+  background-color: colorDefs.$lightCoffee;
   flex-direction: column;
 
   a {
