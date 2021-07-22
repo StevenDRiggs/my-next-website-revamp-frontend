@@ -1,0 +1,33 @@
+@use 'divSpecs';
+@use 'colorDefs';
+
+
+.blogDiv {
+  @include divSpecs.divSpecs;
+}
+
+.blogGrid {
+  border: 2px magenta dashed;
+
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5%;
+  row-gap: 3%;
+}
+
+.blogItem {
+  width: 15vw;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  h4 {
+    color: colorDefs.$black;
+  }
+}
