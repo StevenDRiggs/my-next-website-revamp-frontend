@@ -2,6 +2,7 @@ import Welcome from '../components/welcome'
 import About from '../components/about'
 import Portfolio from '../components/portfolio'
 import Blog from '../components/blog'
+import Contact from '../components/contact'
 
 
 export type ComponentProps = {
@@ -19,6 +20,8 @@ const Home = () => {
       <Portfolio />
 
       <Blog />
+
+      <Contact />
     </div>
   )
 }

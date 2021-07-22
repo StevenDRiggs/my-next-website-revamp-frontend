@@ -1,0 +1,37 @@
+@use 'divSpecs';
+@use 'colorDefs';
+
+
+.contactDiv {
+  @include divSpecs.divSpecs;
+
+  flex-direction: column;
+  color: colorDefs.$white;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-top: 2rem;
+    font-weight: bolder;
+  }
+}
+
+.formInput {
+
+}
+
+.formSubmitBtn {
+  margin: 2rem;
+  font-weight: bolder;
+}
+
+.headingSpanSkyBlue {
+  color: colorDefs.$skyBlue;
+}
+
+.headingSpanBeige {
+  color: colorDefs.$lightBeige;
+}
