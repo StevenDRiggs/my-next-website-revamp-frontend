@@ -4,16 +4,18 @@
 
 .blogDiv {
   @include divSpecs.divSpecs;
+
+  flex-direction: column;
+  padding-top: 4vh;
+  background-color: colorDefs.$white;
 }
 
 .blogGrid {
-  border: 2px magenta dashed;
-
   max-width: 80vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   column-gap: 5%;
-  row-gap: 3%;
 }
 
 .blogItem {
