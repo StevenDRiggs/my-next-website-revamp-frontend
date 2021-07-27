@@ -8,6 +8,14 @@
   flex-direction: column;
   padding-top: 4vh;
   background-color: colorDefs.$white;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+  }
 }
 
 .blogGrid {
@@ -31,5 +39,9 @@
 
   h4 {
     color: colorDefs.$black;
+  }
+
+  p {
+    font-size: 0.9em;
   }
 }

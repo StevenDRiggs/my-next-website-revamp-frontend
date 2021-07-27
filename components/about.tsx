@@ -3,8 +3,6 @@ import { useEffect } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
-import type { ComponentProps } from '../pages/index'
-
 import { MY_LIFE_NOW, PERSONAL_INTERESTS, HOW_I_GOT_STARTED, NEXT_THINGS_TO_LEARN, SKILLS } from '../assets/documents/aboutMe'
 import croppedProfilePic from '../assets/images/Steven_Riggs_photo_cropped.png'
 

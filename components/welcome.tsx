@@ -3,8 +3,6 @@ import { useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
-import type { ComponentProps } from '../pages/index'
-
 import profilePic from '../assets/images/Steven_Riggs_photo.jpg'
 
 import styles from '../styles/Welcome.module.scss'

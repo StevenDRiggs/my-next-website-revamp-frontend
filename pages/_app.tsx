@@ -1,9 +1,7 @@
 import Head from 'next/head'
 
 import type { AppProps } from 'next/app'
-import { Provider } from 'react-redux'
 
-import store from '../redux/store'
 import Navbar from '../components/navbar'
 
 import '../styles/globals.css'
@@ -11,7 +9,7 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
+    <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no' />
 
@@ -35,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main>
         <Component {...pageProps} />
       </main>
-    </Provider>
+    </>
   )
 }
 export default MyApp
