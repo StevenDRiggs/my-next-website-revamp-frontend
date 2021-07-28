@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import useIntersectionObserver from '@react-hook/intersection-observer'
 
 import type { SyntheticEvent } from 'react'
@@ -15,11 +16,12 @@ const pageIds = [
   'contact',
 ]
 
-const intersectionThreshold = 0.5
+const intersectionThreshold = 0.4
 
 
 const Navbar = () => {
   let isIntersecting
+  const router = useRouter()
 
   const [ homeDivRef, setHomeDivRef ] = useState()
   const homeIsIntersecting = useIntersectionObserver(homeDivRef, {threshold: intersectionThreshold})['isIntersecting']
@@ -65,7 +67,7 @@ const Navbar = () => {
     <div className={`bgDark ${styles.navbar}`}>
       <ul>
         {pageIds.map((pageId: string) => (
-          <a key={pageId} id={`navlink_${pageId}`} className={`${styles.navlink}${eval(pageId + 'IsIntersecting') ? ' ' + styles.activeLink : null}`} href={`#${pageId}`} onClick={newActiveNavlink}>
+          <a key={pageId} id={`navlink_${pageId}`} className={`${styles.navlink}${eval(pageId + 'IsIntersecting') ? ' ' + styles.activeLink : null}`} href={router.pathname === '/' || router.pathname.includes('#') ? `#${pageId}` : `/#${pageId}`} onClick={newActiveNavlink}>
             <li>
               {pageId.toUpperCase()}
             </li>

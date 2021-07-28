@@ -1,4 +1,5 @@
 import striptags from 'striptags'
+import Link from 'next/link'
 
 import styles from '../styles/Blog.module.scss'
 
@@ -10,6 +11,7 @@ export type BlogEntry = {
   created_at: string,
   updated_at: string,
   image_url: string,
+  slug: string,
 }
 
 type BlogProps = {
@@ -18,7 +20,6 @@ type BlogProps = {
 
 
 const Blog = ({ blogEntries }: BlogProps) => {
-  console.log(blogEntries)
   return (
     <div id='blog' className={styles.blogDiv}>
       <h1>Programming WTF</h1>
@@ -26,13 +27,17 @@ const Blog = ({ blogEntries }: BlogProps) => {
 
       <div className={styles.blogGrid}>
         {blogEntries.map((blogEntry: BlogEntry) => (
-          <div key={blogEntry.id} className={styles.blogItem}>
-            <h4>{blogEntry.title}</h4>
-            <img src={blogEntry.image_url} alt={blogEntry.title} />
-            <p>
-              {striptags(blogEntry.content).slice(0, 75) + '...'}
-            </p>
-          </div>
+          <Link href={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
+            <a>
+              <div className={styles.blogItem}>
+                <h4>{blogEntry.title}</h4>
+                <img src={blogEntry.image_url} alt={blogEntry.title} />
+                <p>
+                  {striptags(blogEntry.content).slice(0, 75) + '...'}
+                </p>
+              </div>
+            </a>
+          </Link>
         ))}
       </div>
     </div>

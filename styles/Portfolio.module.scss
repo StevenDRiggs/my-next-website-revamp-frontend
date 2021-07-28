@@ -5,11 +5,11 @@
 .portfolioDiv {
   @include divSpecs.divSpecs;
 
-  background-color: colorDefs.$lightCoffee;
   flex-direction: column;
+  color: colorDefs.$white;
 
   a {
-    color: colorDefs.$white;
+    color: colorDefs.$lightBeige;
     text-decoration-line: underline;
   }
 }
@@ -31,10 +31,6 @@
     position: absolute;
     display: block;
     padding-bottom: 100%;
-  }
-
-  h3 {
-    color: colorDefs.$black;
   }
 }
 
