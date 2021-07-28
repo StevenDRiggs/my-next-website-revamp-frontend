@@ -1,4 +1,4 @@
-import type { GetStaticProps, GetStaticPropsContext } from 'next'
+import type { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import type { BlogEntry } from '../../components/blog'
 
@@ -7,7 +7,7 @@ import { DB_URL } from '../../assets/utils/api/dbUrl'
 import styles from '../../styles/BlogEntryShowPage.module.scss'
 
 
-const BlogEntryShowPage = ({ blogEntry }: BlogEntry) => {
+const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
   return (
     <div className={styles.blogEntryDiv}>
       <h1>{blogEntry.title}</h1>
