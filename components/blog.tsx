@@ -26,7 +26,7 @@ const Blog = ({ blogEntries }: BlogProps) => {
       <h3>When Thoughts Fracture...</h3>
 
       <div className={styles.blogGrid}>
-        {blogEntries.map((blogEntry: BlogEntry) => (
+        {blogEntries.sort((a, b) => a.updated_at < b.updated_at).map((blogEntry: BlogEntry) => (
           <Link href={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
             <a>
               <div className={styles.blogItem}>
