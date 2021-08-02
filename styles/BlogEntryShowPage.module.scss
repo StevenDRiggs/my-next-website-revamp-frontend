@@ -1,0 +1,16 @@
+@use 'divSpecs';
+@use 'colorDefs';
+
+
+.blogEntryDiv {
+  @include divSpecs.divSpecs;
+
+  flex-direction: column;
+  padding: 2vh 15vw 0;
+  background-color: colorDefs.$white;
+
+  code {
+    color: colorDefs.$brick;
+    font-weight: bolder;
+  }
+}

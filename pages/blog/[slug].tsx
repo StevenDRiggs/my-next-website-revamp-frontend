@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import type { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import type { BlogEntry } from '../../components/blog'
@@ -10,6 +12,7 @@ import styles from '../../styles/BlogEntryShowPage.module.scss'
 const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
   return (
     <div className={styles.blogEntryDiv}>
+      <Image src={blogEntry.image_url} width={200} height={200} />
       <h1>{blogEntry.title}</h1>
 
       <div dangerouslySetInnerHTML={{__html: blogEntry.content}} />
