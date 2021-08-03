@@ -8,9 +8,43 @@
   flex-direction: column;
   padding: 2vh 15vw 0;
   background-color: colorDefs.$white;
+  position: relative;
 
   code {
     color: colorDefs.$brick;
     font-weight: bolder;
+  }
+}
+
+.allHDiv {
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: end;
+}
+
+.hCDiv {
+  width: 150px;
+  height: 150px;
+  background-color: colorDefs.$green;
+  color: colorDefs.$white;
+  font-size: 150px;
+  text-align: center;
+  line-height: 150px;
+}
+
+.hDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  div {
+    width: 50px;
+    height: 50px;
+
+    &[class=active] {
+      background-color: colorDefs.$black;
+    }
   }
 }
