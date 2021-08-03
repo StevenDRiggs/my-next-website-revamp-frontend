@@ -2410,6 +2410,11 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
+html-to-md@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/html-to-md/-/html-to-md-0.4.3.tgz#bfc9a325a0c9d3c292e5daec1a6e3640facb3664"
+  integrity sha512-ec+2UV69yGGGSNXvKZqc6K4B5F36rbkcYKY+d2NLYwoPly+t8XgkAph1NvUto6ur/iPsOdyB0Lzi00v4CpleuQ==
+
 http-errors@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
