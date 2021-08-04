@@ -65,7 +65,8 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
   }
 
   const handleChange = (event: SyntheticEvent) => {
-    eval(`set${event.target.name}(event.target.value)`)
+    const target = event.target as HTMLElement
+    eval(`set${target.name}(target.value)`)
   }
 
   const handleSubmit = async (event: SyntheticEvent) => {
@@ -108,8 +109,25 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
     }
   }
 
+  const deleteBlogEntry = async () => {
+    if (confirm('Are you sure you want to delete this blog entry?')) {
+      await fetch(`${DB_URL}/blog_entries/${blogEntry.slug}`, {
+        method: 'DELETE',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      })
+        .then(() => router.replace('/#blog'))
+    }
+  }
+
   return (
     <>
+      {hC && token ?
+        <div className={styles.deleteBtn} onClick={deleteBlogEntry}>X</div>
+        : null}
       <div className={styles.allHDiv}>
         {hC ? <div className={styles.hCDiv} onClick={resetAllH}>&#10003;</div> : null}
         <div className={styles.hDiv}>
@@ -123,9 +141,9 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
         <form className={styles.blogEntryDiv} onSubmit={handleSubmit}>
           {token ?
             <>
-              <input type='string' name='Title' value={title} placeholder='Title' onChange={handleChange} required />
-              <input type='string' name='ImageUrl' value={imageUrl} placeholder='Image URL' onChange={handleChange} required />
-              <textarea name='Content' value={content} onChange={handleChange} required />
+              <input className={styles.title} type='string' name='Title' value={title} placeholder='Title' onChange={handleChange} required />
+              <input className={styles.imageUrl} type='string' name='ImageUrl' value={imageUrl} placeholder='Image URL' onChange={handleChange} required />
+              <textarea className={styles.contentTextArea} name='Content' value={content} onChange={handleChange} required />
               <button type='submit'>Submit Changes</button>
             </>
             :
