@@ -88,7 +88,8 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
           },
         }),
       })
-        .then(() => router.replace(`/blog/${title.toLowerCase().replaceAll(/\s+/g, '-')}`))
+        .then(response => response.json())
+        .then(data => router.replace(`/blog/${data.slug}`))
         .then(() => router.reload())
     } else {
       await fetch(`${DB_URL}/admin_login`, {

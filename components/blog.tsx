@@ -100,7 +100,8 @@ const Blog = ({ blogEntries }: BlogProps) => {
           },
         }),
       })
-        .then(() => router.push(`/blog/${title.toLowerCase().replaceAll(/\s+/g, '-')}`))
+        .then(response => response.json())
+        .then(data => router.push(`/blog/${data.slug}`))
     } else {
       await fetch(`${DB_URL}/admin_login`, {
         method: 'POST',
