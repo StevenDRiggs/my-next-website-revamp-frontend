@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
@@ -6,6 +6,10 @@ import styles from '../styles/Contact.module.scss'
 
 
 const Contact = () => {
+  const [ name, setName ] = useState('')
+  const [ email, setEmail ] = useState('')
+  const [ message, setMessage ] = useState('')
+
   const contactHeadingString = () => {
     return Array.from('Like what you see? Send me a line!').map((chr, i) => (
       chr === ' ' ?
@@ -14,8 +18,41 @@ const Contact = () => {
     ))
   }
 
-  const handleSubmit = (event: SyntheticEvent) => {
+  const handleChange = (event: SyntheticEvent) => {
+    const target = event.target as HTMLElement
+
+    eval(`set${target.name}(\`${target.value}\`)`)
+  }
+
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault()
+
+    await fetch(`${DB_URL}/contact`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        contact: {
+          name,
+          email,
+          message,
+        },
+      }),
+    })
+      .then(response => response.json())
+      .then(data => alert(`Thank you, ${data.name}! I will contact you at ${data.email} soon!`))
+
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
+  const handleTextAreaInput = (event: SyntheticEvent) => {
+    const target = event.target as HTMLElement
+
+    target.parentNode.dataset.replicatedValue = target.value
   }
 
   useEffect(() => {
@@ -33,7 +70,7 @@ const Contact = () => {
       }
       headingToColorize[index].classList.add(styles.headingSpanBeige)
     }
-  })
+  }, [])
 
   return (
     <div id='contact' className={`bgDark ${styles.contactDiv}`}>
@@ -42,13 +79,15 @@ const Contact = () => {
       </h1>
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <label htmlFor='name'>What's your name?</label>
-        <input type='text' id='name' className={styles.formInput} placeholder='Name' required />
+        <input type='text' id='name' name='Name' className={styles.formInput} value={name} placeholder='Name' onChange={handleChange} required />
 
         <label htmlFor='email'>How do I reach you?</label>
-        <input type='email' id='email' className={styles.formInput} placeholder='Email' required />
+        <input type='email' id='email' name='Email' className={styles.formInput} value={email} placeholder='Email' onChange={handleChange} required />
 
         <label htmlFor='message'>What would you like to say?</label>
-        <textarea id='message' className={styles.formInput} required />
+        <div className={styles.growWrap}>
+          <textarea id='message' name='Message' className={styles.formInput} value={message} onChange={handleChange} onInput={handleTextAreaInput} required />
+        </div>
 
         <button type='submit' className={styles.formSubmitBtn}>Send it!</button>
       </form>
