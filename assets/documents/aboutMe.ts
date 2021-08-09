@@ -19,82 +19,126 @@ export const SKILLS = `
   <li>
     <ul>
       <li>
-        <span>Frontend:</span>
+        <p>
+          Frontend:
+        </p>
       </li>
       <li>
-        TypeScript
+        <p>
+          TypeScript
+        </p>
       </li>
       <li>
-        JavaScript
+        <p>
+          JavaScript
+        </p>
       </li>
       <li>
-        Next.js
+        <p>
+          Next.js
+        </p>
       </li>
       <li>
-        React
+        <p>
+          React
+        </p>
       </li>
       <li>
-        Redux
+        <p>
+          Redux
+        </p>
       </li>
       <li>
-        HTML5
+        <p>
+          HTML5
+        </p>
       </li>
       <li>
-        CSS3
+        <p>
+          CSS3
+        </p>
       </li>
       <li>
-        Sass/SCSS
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>
-        <span>Backend:</span>
-      </li>
-      <li>
-        Ruby on Rails
-      </li>
-      <li>
-        Ruby
-      </li>
-      <li>
-        Python
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>
-        <span>Databases:</span>
-      </li>
-      <li>
-        SQL
-      </li>
-      <li>
-        PostgreSQL
+        <p>
+          Sass/SCSS
+        </p>
       </li>
     </ul>
   </li>
   <li>
     <ul>
       <li>
-        <span>Other APIs &amp; Frameworks:</span>
+        <p>
+          Backend:
+        </p>
       </li>
       <li>
-        Flask
+        <p>
+          Ruby on Rails
+        </p>
       </li>
       <li>
-        Django
+        <p>
+          Ruby
+        </p>
       </li>
       <li>
-        SQLAlchemy
+        <p>
+          Python
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Databases:
+        </p>
       </li>
       <li>
-        GreenSock Animation Platform (GSAP)
+        <p>
+          SQL
+        </p>
       </li>
       <li>
-        Bootstrap
+        <p>
+          PostgreSQL
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Other APIs & Frameworks:
+        </p>
+      </li>
+      <li>
+        <p>
+          Flask
+        </p>
+      </li>
+      <li>
+        <p>
+          Django
+        </p>
+      </li>
+      <li>
+        <p>
+          SQLAlchemy
+        </p>
+      </li>
+      <li>
+        <p>
+          GreenSock Animation Platform (GSAP)
+        </p>
+      </li>
+      <li>
+        <p>
+          Bootstrap
+        </p>
       </li>
     </ul>
   </li>

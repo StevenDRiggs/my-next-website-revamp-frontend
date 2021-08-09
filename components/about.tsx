@@ -34,27 +34,29 @@ const About = () => {
   })
 
   const showAboutText = (event: SyntheticEvent) => {
+    console.log(SKILLS)
+
     const target = event.target as HTMLElement
     const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textP = document.querySelector(`p[data-name=${targetId}]`) as HTMLElement
+    const textDiv = document.querySelector(`div[data-name=${targetId}]`) as HTMLElement
     const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
     const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
     hiderBlock.style.zIndex = '1'
     icon.style.opacity = '0.5'
-    textP.style.visibility = 'visible'
+    textDiv.style.visibility = 'visible'
   }
 
   const hideAboutText = (event: SyntheticEvent) => {
     const target = event.target as HTMLElement
     const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textP = document.querySelector(`p[data-name=${targetId}]`) as HTMLElement
+    const textDiv = document.querySelector(`div[data-name=${targetId}]`) as HTMLElement
     const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
     const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
-    textP.style.visibility = 'hidden'
+    textDiv.style.visibility = 'hidden'
     icon.style.opacity = '1.0'
     hiderBlock.style.zIndex = '-1'
   }
@@ -69,11 +71,11 @@ const About = () => {
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
           <Image src={croppedProfilePic} />
-          <p data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
-          <p data-name='personalInterests' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
-          <p data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: HOW_I_GOT_STARTED}} />
-          <p data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
-          <p data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
+          <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
+          <div data-name='personalInterests' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
+          <div data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: HOW_I_GOT_STARTED}} />
+          <div data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
+          <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
         </div>
 
         <div id='myLifeNow' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
