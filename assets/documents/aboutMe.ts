@@ -7,11 +7,77 @@ Fames aliquip volumus. Explicari dicant cursus ac dicat curabitur ante. Veniam p
 `
 
 export const HOW_I_GOT_STARTED = `
-Apeirian lorem tellus lacinia turpis timeam dolore has fugit vivamus omittantur placerat disputando falli hinc? Corrumpit ea amet modo accumsan. Nusquam eius consul duis natum cotidieque mattis ei vehicula ad iisque purto. Lorem imperdiet metus repudiandae consectetur alii nec tamquam mea error laboramus tempor labores. Eligendi justo quia ultrices mel tincidunt eros ligula te. Vivendo efficitur a. Varius falli persius repudiare nominati sea hendrerit in rhoncus imperdiet aeque dicam interdum modus postea.
+<p>
+  While I was in the military, my wife and I played a game called Second Life&trade;. I enjoyed the gameplay somewhat, but what I most enjoyed was working with the built-in scripting language, LSL. I often had free time away from computer access, so I would fill up that time hand-writing LSL code to create various in-game items for my wife and I to interact with. (My favorite was a pillow that your avatar could beat up, sending feathers flying.)
+</p>
+<p>
+  I didn't think much about it at the time, but after I left the military, I found the journals I had used for LSL. I had filled up eight journals, front-and-back with HAND-WRITTEN code! I realized that I loved coding far more than I had ever known.
+</p>
+<p>
+  So, I taught myself Python and was hooked forever. Soon after, I saw an opportunity at Flatiron School, where I learned Ruby on Rails, React and Redux, and my appetite for learning new code has been whetted.
+</p>
+<p>
+  Since graduating in December 2020, I have taught myself many more languages. I can't get enough; this is a process that will cotinue throughout the rest of my life.
+</p>
 `
 
 export const NEXT_THINGS_TO_LEARN = `
-O viderer nostrud vivendo sonet pharetra fuisset eripuit habitant mediocrem movet. Tamquam offendit iure congue delicata et justo. Et scelerisque fames vim dicat ad honestatis rhoncus ut. No ceteros omittantur vehicula hendrerit aeque ultrices scripta rutrum platonem etiam odio fabulas. Aut magna orci ne pertinax voluptatibus quam. Posidonium aliquip eius electram laoreet urbanitas appetere suas pertinax corrumpit dissentiet nominati imperdiet platonem minim. Posuere aut causae a. Soluta tamquam mentitum interesset adversarium prompta dicta viris nulla laboramus eu no. Lectus eget sint usu posuere soluta vis. Eligendi utinam laoreet repudiandae rationibus eleifend scelerisque dicat inani populo.
+<ul>
+  <li>
+    <ul>
+      <li>
+        <p>
+          GraphQL
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Apollo
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Kubernetes
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          TensorFlow
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Brainf**k
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          MongoDB
+        </p>
+      </li>
+    </ul>
+  </li>
+</ul>
 `
 
 export const SKILLS = `

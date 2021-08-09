@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useEffect } from 'react'
+import striptags from 'striptags'
 
 import type { SyntheticEvent } from 'react'
 
@@ -73,7 +74,7 @@ const About = () => {
           <Image src={croppedProfilePic} />
           <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
           <div data-name='personalInterests' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
-          <div data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: HOW_I_GOT_STARTED}} />
+          <div data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
           <div data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
           <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
         </div>
