@@ -134,6 +134,29 @@
   position: absolute;
   visibility: hidden;
   z-index: 1;
+
+  ul {
+    list-style-type: none;
+    font-size: 0.8rem;
+    padding: 0;
+
+    *:not(span) {
+      text-align: center;
+    }
+  }
+
+  & > ul {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    gap: 1em 1em;
+
+    span {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
 }
 
 .hiderBlock {

@@ -15,5 +15,88 @@ O viderer nostrud vivendo sonet pharetra fuisset eripuit habitant mediocrem move
 `
 
 export const SKILLS = `
-Eum wisi quisque electram agam tota cetero felis. Nec cras consectetur definitiones quaeque. Ne ultrices debet mattis harum scelerisque tincidunt mi interesset homero deserunt posidonium dissentiet noluisse est. Agam corrumpit pro aliquip. Gravida quam interesset placerat vim labores mauris ponderum noluisse. Mutat comprehensam vivendo praesent definitiones quodsi ignota ut dicat efficiendi denique eripuit brute. Nisl vel has.
+<ul>
+  <li>
+    <ul>
+      <li>
+        <span>Frontend:</span>
+      </li>
+      <li>
+        TypeScript
+      </li>
+      <li>
+        JavaScript
+      </li>
+      <li>
+        Next.js
+      </li>
+      <li>
+        React
+      </li>
+      <li>
+        Redux
+      </li>
+      <li>
+        HTML5
+      </li>
+      <li>
+        CSS3
+      </li>
+      <li>
+        Sass/SCSS
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <span>Backend:</span>
+      </li>
+      <li>
+        Ruby on Rails
+      </li>
+      <li>
+        Ruby
+      </li>
+      <li>
+        Python
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <span>Databases:</span>
+      </li>
+      <li>
+        SQL
+      </li>
+      <li>
+        PostgreSQL
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <span>Other APIs &amp; Frameworks:</span>
+      </li>
+      <li>
+        Flask
+      </li>
+      <li>
+        Django
+      </li>
+      <li>
+        SQLAlchemy
+      </li>
+      <li>
+        GreenSock Animation Platform (GSAP)
+      </li>
+      <li>
+        Bootstrap
+      </li>
+    </ul>
+  </li>
+</ul>
 `

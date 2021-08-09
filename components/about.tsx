@@ -69,11 +69,11 @@ const About = () => {
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
           <Image src={croppedProfilePic} />
-          <p data-name='myLifeNow' className={styles.aboutText}>{MY_LIFE_NOW}</p>
-          <p data-name='personalInterests' className={`${styles.aboutText}`}>{PERSONAL_INTERESTS}</p>
-          <p data-name='howIGotStarted' className={`${styles.aboutText}`}>{HOW_I_GOT_STARTED}</p>
-          <p data-name='nextThingsToLearn' className={styles.aboutText}>{NEXT_THINGS_TO_LEARN}</p>
-          <p data-name='skills' className={styles.aboutText}>{SKILLS}</p>
+          <p data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
+          <p data-name='personalInterests' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
+          <p data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: HOW_I_GOT_STARTED}} />
+          <p data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
+          <p data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
         </div>
 
         <div id='myLifeNow' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
