@@ -40,7 +40,7 @@ const About = () => {
 
   const showAboutText = (event: SyntheticEvent) => {
     const target = event.target as HTMLElement
-    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
+    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id || target.parentElement.parentElement.parentElement.id
 
     const textDiv = document.querySelector(`div[data-name=${targetId}]`) as HTMLElement
     const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
@@ -55,12 +55,12 @@ const About = () => {
     const target = event.target as HTMLElement
     const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textDiv = document.querySelector(`div[data-name=${targetId}]`) as HTMLElement
-    const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
+    const textDivs = document.querySelectorAll(`div[data-name]`) as HTMLElement[]
+    const icons = document.querySelectorAll(`div.iconGroup`) as HTMLElement[]
     const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
-    textDiv.style.visibility = 'hidden'
-    icon.style.opacity = '1.0'
+    textDivs.forEach(textDiv => textDiv.style.visibility = 'hidden')
+    icons.forEach(icon => icon.style.opacity = '1.0')
     hiderBlock.style.zIndex = '-1'
   }
 
@@ -94,7 +94,10 @@ const About = () => {
             <i className={`fas fa-user-friends`}></i>
           </div>
         </div>
-        <div id='personalInterests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
+        <div id='personalInterests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
+          hideAboutText(event)
+          showAboutText(event)
+          }}>
           <div className='iconGroup'>
             <h6>Personal Interests</h6>
             <i className={`fas fa-gamepad`}></i>
@@ -106,13 +109,19 @@ const About = () => {
             <i className={`fas fa-pencil-alt`}></i>
           </div>
         </div>
-        <div id='nextThingsToLearn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
+        <div id='nextThingsToLearn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
+          hideAboutText(event)
+          showAboutText(event)
+          }}>
           <div className='iconGroup'>
             <h6>Next Things I Want to Learn</h6>
             <i className={`fas fa-school`}></i>
           </div>
         </div>
-        <div id='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
+        <div id='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
+          hideAboutText(event)
+          showAboutText(event)
+          }}>
           <div className='iconGroup'>
             <h6>My Skills</h6>
             <i className={`fas fa-terminal`}></i>

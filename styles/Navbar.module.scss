@@ -39,3 +39,13 @@
 .navlink {
   color: inherit;
 }
+
+
+@media (max-width: 450px) {
+  .navbar {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

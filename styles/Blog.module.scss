@@ -92,3 +92,23 @@
   width: 100%;
   min-height: 16em;
 }
+
+
+@media (max-width: 600px) {
+  .blogGrid {
+    width: 90vw;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogItem {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .blogGrid {
+    width: 100vw;
+    grid-template-columns: 1fr;
+  }
+}

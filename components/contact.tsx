@@ -74,7 +74,7 @@ const Contact = () => {
 
   return (
     <div id='contact' className={`bgDark ${styles.contactDiv}`}>
-      <h1 className='colorizedHeading2'>
+      <h1 className={`colorizedHeading2 ${styles.colorizedHeading}`}>
         {contactHeadingString()}
       </h1>
       <form className={styles.contactForm} onSubmit={handleSubmit}>

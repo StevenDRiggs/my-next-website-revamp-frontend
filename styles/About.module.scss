@@ -181,3 +181,19 @@
 .headingWithBreak {
   padding-bottom: 2rem;
 }
+
+@media (max-width: 450px) {
+  .aboutDiv {
+    padding-top: 15vh;
+  }
+
+  .detailsDiv {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'myLifeNow personalInterests howIGotStarted'
+      'nextThingsToLearn . skills'
+      'profilePic profilePic profilePic'
+      'profilePic profilePic profilePic'
+      'profilePic profilePic profilePic';
+  }
+}

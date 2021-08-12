@@ -57,3 +57,11 @@
 .headingSpanBeige {
   color: colorDefs.$lightBeige;
 }
+
+
+@media (max-width: 600px) {
+  .colorizedHeading {
+    padding: 0 10vw;
+    text-align: center;
+  }
+}
