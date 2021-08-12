@@ -1,9 +1,96 @@
 export const MY_LIFE_NOW = `
-Officiis noluisse assentior export constituto iure turpis faucibus fusce morbi eu meliore dolor qui. Aut quo mi interdum aliquet labores corrumpit on ex vidisse putent quando possim. Pertinax urbanitas honestatis viverra maecenas quaestio ornare lobortis vero ei laboramus! Posidonium tale aliquam. Adhuc vivamus massa noster habeo dolor sem pro cetero cum ridens movet nemore el sint. Iure sonet platonem forensibus ea in ei veniam dicta omittam no patrioque mel pri? Ornare purus qui ultrices altera doming albucius meliore pretium aeque cursus nullam homero. Quodsi eleifend usu rationibus apeirian persecuti putant no minimum patrioque. Natum velit forensibus ante prima.
+<p>
+  I currently live with my wife, dog and cat just outside Denver, CO. The view is gorgeous!
+</p>
+<p>
+  I spend most of my time writing code, sometimes 10 or 12 hours a day. I absolutely love coding, and even "work" usually feels like "fun time".
+</p>
+<p>
+  When I am not coding, I am usually playing video games. My current favorites are <em>Geshin Impact</em>, <em>The Sims 4 (heavily modded)</em> and <em>Kingdom of Loathing</em>.
+</p>
+<p>
+  Most autumns, my wife and I start our yearly reading rush, where we read through series after series for several months. This year we will likely finish the <em>Wrinkle in Time</em> series by Madeleine L'Engle and the <em>Shadow and Bone</em> series by Leigh Bardugo at a minimum.
+</p>
+<p>
+  My wife and I are both enthusiastic about the ketogenic lifestyle, and are always on the lookout for new, delicious recipes.
+</p>
 `
 
 export const PERSONAL_INTERESTS = `
-Fames aliquip volumus. Explicari dicant cursus ac dicat curabitur ante. Veniam posuere pri nisl. On mollis cetero possim vitae scripta agam minimum eum sonet tota. Dicant posuere assentior ornatus gravida lucilius. Elit omnium numquam porta quis pro eius accumsan consectetur enim corrumpit. Pericula sint iriure. Fabulas arcu brute nam primis minim mel harum in repudiandae detracto quaestio dolore! Eget ancillae illum falli iisque magna omittantur suscipit patrioque varius varius minim ac adversarium bonorum.
+<ul>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Faith
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Family
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Coding
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Video Games
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Storytelling
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Reading
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Anime (Watching)
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Hiking / Caving
+        </p>
+      </li>
+    </ul>
+  </li>
+</ul>
 `
 
 export const HOW_I_GOT_STARTED = `
@@ -17,7 +104,7 @@ export const HOW_I_GOT_STARTED = `
   So, I taught myself Python and was hooked forever. Soon after, I saw an opportunity at Flatiron School, where I learned Ruby on Rails, React and Redux, and my appetite for learning new code has been whetted.
 </p>
 <p>
-  Since graduating in December 2020, I have taught myself many more languages. I can't get enough; this is a process that will cotinue throughout the rest of my life.
+  Since graduating in December 2020, I have taught myself many more languages. I can't get enough; this is a process that will continue throughout the rest of my life.
 </p>
 `
 

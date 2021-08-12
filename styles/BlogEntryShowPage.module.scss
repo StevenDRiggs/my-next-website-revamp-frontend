@@ -14,6 +14,18 @@
     color: colorDefs.$brick;
     font-weight: bolder;
   }
+
+  figcaption a {
+    color: colorDefs.$skyBlue;
+
+    &:hover {
+      color: colorDefs.$lightBeige;
+    }
+
+    &:visited {
+      color: colorDefs.$brick;
+    }
+  }
 }
 
 .allHDiv {

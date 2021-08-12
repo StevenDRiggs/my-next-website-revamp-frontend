@@ -157,7 +157,10 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
         </form>
         :
         <div className={styles.blogEntryDiv}>
-          <Image src={blogEntry.image_url} width={200} height={200} />
+          <figure>
+            <Image src={blogEntry.image_url} width={300} height={200} />
+            {blogEntry.photo_by !== 'not sourced' ? <figcaption dangerouslySetInnerHTML={{__html: blogEntry.photo_by}} /> : null}
+          </figure>
           <h1>{blogEntry.title}</h1>
 
           <div dangerouslySetInnerHTML={{__html: blogEntry.content}} />

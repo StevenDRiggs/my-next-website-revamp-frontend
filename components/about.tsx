@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import striptags from 'striptags'
 
@@ -11,6 +13,8 @@ import styles from '../styles/About.module.scss'
 
 
 const About = () => {
+  const router = useRouter()
+
   const aboutMeString = () => {
     return Array.from('About Me').map((chr, i) => (
       chr === ' ' ?
@@ -35,8 +39,6 @@ const About = () => {
   })
 
   const showAboutText = (event: SyntheticEvent) => {
-    console.log(SKILLS)
-
     const target = event.target as HTMLElement
     const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
@@ -62,6 +64,13 @@ const About = () => {
     hiderBlock.style.zIndex = '-1'
   }
 
+  const clickLongText = (event: SyntheticEvent) => {
+    const target = event.target as HTMLElement
+    const urlStub = target.parentElement.parentElement.dataset.url || target.parentElement.parentElement.parentElement.dataset.url
+
+    router.push(`/about/${urlStub}`)
+  }
+
   return (
     <div id='about' className={styles.aboutDiv}>
       <h2 className='colorizedHeading'>
@@ -72,14 +81,14 @@ const About = () => {
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
           <Image src={croppedProfilePic} />
-          <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
-          <div data-name='personalInterests' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
-          <div data-name='howIGotStarted' className={`${styles.aboutText}`} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
+          <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(MY_LIFE_NOW).slice(0, 300)}...</p>`}} />
+          <div data-name='personalInterests' className={styles.aboutText} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
+          <div data-name='howIGotStarted' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
           <div data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
           <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
         </div>
 
-        <div id='myLifeNow' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
+        <div id='myLifeNow' data-url='my_life_now' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
           <div className='iconGroup'>
             <h6>My Life Now</h6>
             <i className={`fas fa-user-friends`}></i>
@@ -91,7 +100,7 @@ const About = () => {
             <i className={`fas fa-gamepad`}></i>
           </div>
         </div>
-        <div id='howIGotStarted' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText}>
+        <div id='howIGotStarted' data-url='how_i_got_started' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
           <div className='iconGroup'>
             <h6>How I Got Started</h6>
             <i className={`fas fa-pencil-alt`}></i>

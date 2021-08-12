@@ -82,6 +82,10 @@
   font-size: 2rem;
   position: relative;
 
+  &[id=myLifeNow], &[id=howIGotStarted] {
+    cursor: pointer;
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -172,4 +176,8 @@
 
 .largeAboutText {
   width: 80%;
+}
+
+.headingWithBreak {
+  padding-bottom: 2rem;
 }

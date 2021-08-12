@@ -1,5 +1,6 @@
 import striptags from 'striptags'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -17,6 +18,7 @@ export type BlogEntry = {
   created_at: string,
   updated_at: string,
   image_url: string,
+  photo_by: string,
   slug: string,
 }
 
@@ -160,7 +162,7 @@ const Blog = ({ blogEntries }: BlogProps) => {
                 <a>
                   <div className={styles.blogItem}>
                     <h4>{blogEntry.title}</h4>
-                    <img src={blogEntry.image_url} alt={blogEntry.title} />
+                    <Image src={blogEntry.image_url} width={300} height={200} alt={blogEntry.title} />
                     <p>
                       {striptags(blogEntry.content).slice(0, 75) + '...'}
                     </p>
