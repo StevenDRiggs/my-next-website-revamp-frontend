@@ -79,7 +79,7 @@ const Blog = ({ blogEntries }: BlogProps) => {
   }
 
   const handleChange = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
+    const target = event.target as HTMLInputElement
     eval(`set${target.name}(target.value)`)
   }
 

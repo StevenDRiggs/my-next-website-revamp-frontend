@@ -55,8 +55,8 @@ const About = () => {
     const target = event.target as HTMLElement
     const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
 
-    const textDivs = document.querySelectorAll(`div[data-name]`) as HTMLElement[]
-    const icons = document.querySelectorAll(`div.iconGroup`) as HTMLElement[]
+    const textDivs = Array.from(document.querySelectorAll(`div[data-name]`)) as HTMLElement[]
+    const icons = Array.from(document.querySelectorAll(`div.iconGroup`)) as HTMLElement[]
     const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
 
     textDivs.forEach(textDiv => textDiv.style.visibility = 'hidden')

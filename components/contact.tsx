@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
+import { DB_URL } from '../assets/utils/api/dbUrl'
+
 import styles from '../styles/Contact.module.scss'
 
 
@@ -19,7 +21,7 @@ const Contact = () => {
   }
 
   const handleChange = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
+    const target = event.target as HTMLInputElement
 
     eval(`set${target.name}(\`${target.value}\`)`)
   }
@@ -50,9 +52,9 @@ const Contact = () => {
   }
 
   const handleTextAreaInput = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
+    const target = event.target as HTMLInputElement
 
-    target.parentNode.dataset.replicatedValue = target.value
+    (target.parentNode as HTMLElement).dataset.replicatedValue = target.value
   }
 
   useEffect(() => {
