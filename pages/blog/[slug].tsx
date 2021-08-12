@@ -161,7 +161,10 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
             <Image src={blogEntry.image_url} width={300} height={200} />
             {blogEntry.photo_by !== 'not sourced' ? <figcaption dangerouslySetInnerHTML={{__html: blogEntry.photo_by}} /> : null}
           </figure>
+
           <h1>{blogEntry.title}</h1>
+          <h6 className={styles.date}>{blogEntry.created_at}</h6>
+          {blogEntry.updated_at !== blogEntry.created_at ? <h6 className={styles.date}>[UPDATE] {blogEntry.updated_at}</h6> : null}
 
           <div dangerouslySetInnerHTML={{__html: blogEntry.content}} />
         </div>
@@ -197,7 +200,11 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
 
   return {
     props: {
-      blogEntry,
+      blogEntry: {
+        ...blogEntry,
+        created_at: new Date(blogEntry.created_at).toDateString(),
+        updated_at: new Date(blogEntry.updated_at).toDateString(),
+      },
     },
   }
 }
