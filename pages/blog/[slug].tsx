@@ -158,7 +158,7 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
         :
         <div className={styles.blogEntryDiv}>
           <figure>
-            <Image src={blogEntry.image_url} width={300} height={200} />
+            <Image src={blogEntry.image_url} width={300} height={200} alt="" />
             {blogEntry.photo_by !== 'not sourced' ? <figcaption dangerouslySetInnerHTML={{__html: blogEntry.photo_by}} /> : null}
           </figure>
 

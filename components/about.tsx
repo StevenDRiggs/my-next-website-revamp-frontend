@@ -80,7 +80,7 @@ const About = () => {
       <div className={styles.detailsDiv}>
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
-          <Image src={croppedProfilePic} />
+          <Image src={croppedProfilePic} alt="" />
           <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(MY_LIFE_NOW).slice(0, 300)}...</p>`}} />
           <div data-name='personalInterests' className={styles.aboutText} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
           <div data-name='howIGotStarted' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />

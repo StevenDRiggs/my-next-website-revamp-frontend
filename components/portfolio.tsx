@@ -8,7 +8,7 @@ import styles from '../styles/Portfolio.module.scss'
 const Portfolio = () => {
   return (
     <div id='portfolio' className={`${styles.portfolioDiv} bgDark`}>
-      <h3><em>See my full portfolio <a href='https://github.com/StevenDRiggs' target='_blank'>here</a></em></h3>
+      <h3><em>See my full portfolio <a href='https://github.com/StevenDRiggs' target='_blank' rel='noreferrer'>here</a></em></h3>
       <div className={styles.portfolioGrid}>
         <div className={styles.portfolioItem}>
           <h3>Project Title</h3>

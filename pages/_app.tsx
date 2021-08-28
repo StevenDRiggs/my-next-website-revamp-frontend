@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+import Script from 'next/script'
 import type { AppProps } from 'next/app'
 
 import Navbar from '../components/navbar'
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <script src="https://kit.fontawesome.com/4c7cac2126.js" crossOrigin="anonymous"></script>
+        <Script src="https://kit.fontawesome.com/4c7cac2126.js" crossOrigin="anonymous" />
       </Head>
 
       <Navbar />

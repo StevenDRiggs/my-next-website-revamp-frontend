@@ -23,10 +23,10 @@ const Welcome = () => {
   return (
     <>
       <div id='home' className={`bgDark ${styles.welcomeDiv}`}>
-        <h1>Hello,<br />I'm <span onMouseEnter={toggleProfilePic} onMouseLeave={toggleProfilePic}>Steven</span></h1>
+        <h1>Hello,<br />I&apos;m <span onMouseEnter={toggleProfilePic} onMouseLeave={toggleProfilePic}>Steven</span></h1>
 
         <p>
-          A <a href='https://www.w3schools.com/whatis/whatis_fullstack.asp' target='_blank' onMouseEnter={togglePopupDef} onMouseLeave={togglePopupDef}>Full Stack Developer</a><br /><a className='hiddenLink' href='#about'>Here for Your Needs</a>
+          A <a href='https://www.w3schools.com/whatis/whatis_fullstack.asp' target='_blank' rel='noreferrer' onMouseEnter={togglePopupDef} onMouseLeave={togglePopupDef}>Full Stack Developer</a><br /><a className='hiddenLink' href='#about'>Here for Your Needs</a>
         </p>
       </div>
 

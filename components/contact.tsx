@@ -80,7 +80,7 @@ const Contact = () => {
         {contactHeadingString()}
       </h1>
       <form className={styles.contactForm} onSubmit={handleSubmit}>
-        <label htmlFor='name'>What's your name?</label>
+        <label htmlFor='name'>What&apos;s your name?</label>
         <input type='text' id='name' name='Name' className={styles.formInput} value={name} placeholder='Name' onChange={handleChange} required />
 
         <label htmlFor='email'>How do I reach you?</label>
