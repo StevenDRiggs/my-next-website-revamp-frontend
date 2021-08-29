@@ -1,2 +1,1 @@
-//export const DB_URL = 'http://localhost:5000'
-export const DB_URL = 'http://api.stevendriggs.com'
+export const DB_URL = process.env.NODE_ENV === 'production' ? 'http://api.stevendriggs.com' : 'http://localhost:5000'
