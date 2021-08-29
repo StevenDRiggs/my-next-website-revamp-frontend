@@ -58,8 +58,6 @@ const Contact = () => {
   }
 
   useEffect(() => {
-    console.log('DB_URL:', DB_URL)
-
     for (let i in [...Array(2)]) {
       const headingToColorize = document.querySelectorAll('.colorizedHeading2 span')
 
