@@ -23,6 +23,7 @@ const About = () => {
     ))
   }
 
+  // colorize heading
   useEffect(() => {
     const headingToColorize = document.querySelectorAll('.colorizedHeading span')
 
@@ -85,7 +86,7 @@ const About = () => {
           <div data-name='personalInterests' className={styles.aboutText} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
           <div data-name='howIGotStarted' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
           <div data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
-          <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: SKILLS}} />
+          <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(SKILLS).slice(0, 1500)}...</p>`}} />
         </div>
 
         <div id='myLifeNow' data-url='my_life_now' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
@@ -94,10 +95,7 @@ const About = () => {
             <i className={`fas fa-user-friends`}></i>
           </div>
         </div>
-        <div id='personalInterests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
-          hideAboutText(event)
-          showAboutText(event)
-          }}>
+        <div id='personalInterests' data-url='personal_interests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={clickLongText}>
           <div className='iconGroup'>
             <h6>Personal Interests</h6>
             <i className={`fas fa-gamepad`}></i>
@@ -109,19 +107,13 @@ const About = () => {
             <i className={`fas fa-pencil-alt`}></i>
           </div>
         </div>
-        <div id='nextThingsToLearn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
-          hideAboutText(event)
-          showAboutText(event)
-          }}>
+        <div id='nextThingsToLearn' data-url='next_things_to_learn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={clickLongText}>
           <div className='iconGroup'>
             <h6>Next Things I Want to Learn</h6>
             <i className={`fas fa-school`}></i>
           </div>
         </div>
-        <div id='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={event => {
-          hideAboutText(event)
-          showAboutText(event)
-          }}>
+        <div id='skills' data-url='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
           <div className='iconGroup'>
             <h6>My Skills</h6>
             <i className={`fas fa-terminal`}></i>

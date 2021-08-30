@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
 
-import { MY_LIFE_NOW } from '../../assets/documents/aboutMe'
+import { NEXT_THINGS_TO_LEARN } from '../../assets/documents/aboutMe'
 
 import styles from '../../styles/About.module.scss'
+import styles2 from '../../styles/MobileShowPage.module.scss'
 
 
-const MyLifeNow = () => {
-  const myLifeNowString = () => {
-    return Array.from('My Life Now').map((chr, i) => (
+const NextThingsToLearn = () => {
+  const nextThingsToLearnString = () => {
+    return Array.from('Next Things I Want to Learn').map((chr, i) => (
       chr === ' ' ?
       ' '  :
       <span key={i}>{chr}</span>
@@ -31,15 +32,15 @@ const MyLifeNow = () => {
   })
 
   return (
-    <div id='about' className={styles.aboutDiv}>
+    <div id='about' className={`${styles.aboutDiv} ${styles2.showPageList}`}>
       <h2 className={`colorizedHeading ${styles.headingWithBreak}`}>
-        {myLifeNowString()}
+        {nextThingsToLearnString()}
       </h2>
 
-      <div dangerouslySetInnerHTML={{__html: MY_LIFE_NOW}} />
+      <div dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
     </div>
   )
 }
 
 
-export default MyLifeNow
+export default NextThingsToLearn

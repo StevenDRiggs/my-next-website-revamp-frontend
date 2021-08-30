@@ -1,0 +1,13 @@
+.showPageList {
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+
+    li ul li:first-child {
+      font-weight: bolder;
+    }
+  }
+}

@@ -3,10 +3,10 @@ export const MY_LIFE_NOW = `
   I currently live with my wife, dog and cat just outside Denver, CO. The view is gorgeous!
 </p>
 <p>
-  I spend most of my time writing code, sometimes 10 or 12 hours a day. I absolutely love coding, and even "work" usually feels like "fun time".
+  I spend most of my time writing code, sometimes 10 or 12 hours a day. I absolutely love coding, and even "work time" usually feels like "fun time".
 </p>
 <p>
-  When I am not coding, I am usually playing video games. My current favorites are <em>Geshin Impact</em>, <em>The Sims 4 (heavily modded)</em> and <em>Kingdom of Loathing</em>.
+  When I am not coding, I am usually playing video games. My current favorites are <em>Genshin Impact</em>, <em>The Sims 4 (heavily modded)</em> and <em>Kingdom of Loathing</em>.
 </p>
 <p>
   Most autumns, my wife and I start our yearly reading rush, where we read through series after series for several months. This year we will likely finish the <em>Wrinkle in Time</em> series by Madeleine L'Engle and the <em>Shadow and Bone</em> series by Leigh Bardugo at a minimum.
@@ -291,6 +291,70 @@ export const SKILLS = `
       <li>
         <p>
           Bootstrap
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>
+        <p>
+          Amazon Web Services (AWS):
+        </p>
+      </li>
+      <li>
+        <p>
+          AWS Amplify
+        </p>
+      </li>
+      <li>
+        <p>
+          Amazon Simple Email Service (SES)
+        </p>
+      </li>
+      <li>
+        <p>
+          Certificate Manager
+        </p>
+      </li>
+      <li>
+        <p>
+          Cloudfront
+        </p>
+      </li>
+      <li>
+        <p>
+          Elastic Beanstalk
+        </p>
+      </li>
+      <li>
+        <p>
+          Elastic Cloud Compute (EC2)
+        </p>
+      </li>
+      <li>
+        <p>
+          Identity and Access Management (IAM)
+        </p>
+      </li>
+      <li>
+        <p>
+          Relational Database System (RDS)
+        </p>
+      </li>
+      <li>
+        <p>
+          Route 53
+        </p>
+      </li>
+      <li>
+        <p>
+          S3
+        </p>
+      </li>
+      <li>
+        <p>
+          Virtual Private Cloud (VPC)
         </p>
       </li>
     </ul>
