@@ -8,7 +8,7 @@ import type { SyntheticEvent } from 'react'
 import styles from '../styles/Navbar.module.scss'
 
 
-const pageIds = [
+export const pageIds = [
   'home',
   'about',
   'portfolio',
@@ -53,6 +53,7 @@ const Navbar = () => {
     })
   }
 
+  // highlight current location
   useEffect(() => {
     const referencedDivs = pageIds.map((pageId: string) => (
       document.getElementById(pageId)
