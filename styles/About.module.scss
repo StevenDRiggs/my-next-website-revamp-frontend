@@ -183,6 +183,16 @@
   padding-bottom: 2rem;
 }
 
+.techLink {
+  text-decoration: underline;
+  color: colorDefs.$darkSkyBlue;
+
+  &:hover, &:visited {
+    color: colorDefs.$mediumBeige;
+  }
+}
+
+
 @media (max-width: 450px) {
   .aboutDiv {
     padding-top: 15vh;
