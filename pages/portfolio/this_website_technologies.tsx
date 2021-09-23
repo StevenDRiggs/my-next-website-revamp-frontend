@@ -61,6 +61,10 @@ const ThisWebsiteTechnologies = () => {
     'JSON Web Token (JWT)': 'https://github.com/jwt/ruby-jwt',
   }
 
+  const database = {
+    'PostgreSQL': 'https://www.postgresql.org/docs/',
+  }
+
   const aws = {
     'AWS Amplify': 'https://aws.amazon.com/amplify/?nc2=h_ql_prod_mo_awsa',
     'Amazon Simple Email Service (SES)': 'https://aws.amazon.com/ses/?nc2=h_ql_prod_ba_ses',
@@ -94,7 +98,7 @@ const ThisWebsiteTechnologies = () => {
                   Frontend:
                 </p>
               </li>
-              {Object.entries(frontend).map(([ tech, loc], index) => (
+              {Object.entries(frontend).map(([ tech, loc ], index) => (
                 <li key={index}>
                   <p>
                     <a href={loc} className={styles.techLink} target='_blank' rel='noreferrer'>
@@ -117,7 +121,25 @@ const ThisWebsiteTechnologies = () => {
                   Backend:
                 </p>
               </li>
-              {Object.entries(backend).map(([ tech, loc], index) => (
+              {Object.entries(backend).map(([ tech, loc ], index) => (
+                <li key={index}>
+                  <p>
+                    <a href={loc} className={styles.techLink} target='_blank' rel='noreferrer'>
+                      {tech}
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <p>
+                  Database:
+                </p>
+              </li>
+              {Object.entries(database).map(([ tech, loc ], index) => (
                 <li key={index}>
                   <p>
                     <a href={loc} className={styles.techLink} target='_blank' rel='noreferrer'>
@@ -135,7 +157,7 @@ const ThisWebsiteTechnologies = () => {
                   Hosting Through Amazon Web Services (AWS):
                 </p>
               </li>
-              {Object.entries(aws).map(([ tech, loc], index) => (
+              {Object.entries(aws).map(([ tech, loc ], index) => (
                 <li key={index}>
                   <p>
                     <a href={loc} className={styles.techLink} target='_blank' rel='noreferrer'>
@@ -153,7 +175,7 @@ const ThisWebsiteTechnologies = () => {
                   Additional Services Used:
                 </p>
               </li>
-              {Object.entries(additionalServices).map(([ tech, loc], index) => (
+              {Object.entries(additionalServices).map(([ tech, loc ], index) => (
                 <li key={index}>
                   <p>
                     <a href={loc} className={styles.techLink} target='_blank' rel='noreferrer'>
