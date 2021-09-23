@@ -62,7 +62,7 @@ const ThisWebsiteTechnologies = () => {
   }
 
   const database = {
-    'PostgreSQL': 'https://www.postgresql.org/docs/',
+    'PostgreSQL': 'https://www.postgresql.org/',
   }
 
   const aws = {
@@ -77,6 +77,7 @@ const ThisWebsiteTechnologies = () => {
   }
 
   const additionalServices = {
+    'Git': 'https://git-scm.com/',
     'GitHub': 'https://github.com/',
     'Nginx': 'https://www.nginx.com/',
     'Passenger': 'https://www.phusionpassenger.com/',
