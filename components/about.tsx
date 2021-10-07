@@ -78,7 +78,7 @@ const About = () => {
         {aboutMeString()}
       </h2>
 
-      <Link href='/about/xray'>
+      <Link href='/about/xray' passHref>
         <p className={styles.xrayInsert}>
           Want to know more?
           <br />
