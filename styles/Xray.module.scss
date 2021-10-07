@@ -1,0 +1,32 @@
+@use 'colorDefs';
+
+
+.xrayHeader {
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    margin-top: 0;
+    font-weight: 200;
+    font-style: italic;
+  }
+}
+
+.xrayArticle {
+  border: 1px black solid;
+  p {
+    text-align: center;
+
+    &:nth-child(even) {
+      background-color: colorDefs.$lightGray;
+      color: colorDefs.$black;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+}

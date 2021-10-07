@@ -78,6 +78,14 @@ const About = () => {
         {aboutMeString()}
       </h2>
 
+      <Link href='/about/xray'>
+        <p className={styles.xrayInsert}>
+          Want to know more?
+          <br />
+          Check out my <a className={styles.techLink}>Personality Xray</a>
+        </p>
+      </Link>
+
       <div className={styles.detailsDiv}>
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
