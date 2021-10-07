@@ -15,7 +15,7 @@ const Xray = () => {
 
       <article className={styles.xrayArticle}>
         <p>
-          <em>Oxford Languages</em> defines 'normal' as:
+          <em>Oxford Languages</em> defines &lsquo;normal&rsquo; as:
           <br />
           <q>
             conforming to a standard; usual, typical, or expected
@@ -23,7 +23,7 @@ const Xray = () => {
         </p>
 
         <p>
-          According to this definition, <strong>I am not 'normal'.</strong>
+          According to this definition, <strong>I am not &lsquo;normal&rsquo;.</strong>
         </p>
 
         <p>
@@ -40,7 +40,7 @@ const Xray = () => {
             </li>
             &bull;
             <li>
-              My favorite question is "Why?"
+              My favorite question is &ldquo;Why?&rdquo;
             </li>
           </ul>
         </p>
@@ -107,7 +107,7 @@ const Xray = () => {
         </p>
 
         <p>
-          You may be asking, "How can he be confident in his skills and uncomfortable talking about them?" or "How can he be an introvert and love public speaking?"
+          You may be asking, &ldquo;How can he be confident in his skills and uncomfortable talking about them?&rdquo; or &ldquo;How can he be an introvert and love public speaking?&rdquo;
           <br />
           The answer is simple:
         </p>
