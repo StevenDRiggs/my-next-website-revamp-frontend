@@ -30,9 +30,9 @@ const Welcome = () => {
         </p>
       </div>
 
-      <div className={styles.imageDiv} hidden={hideProfilePic}>
+      {/* <div className={styles.imageDiv} hidden={hideProfilePic}>
         <Image src={profilePic} alt='Steven Riggs' />
-      </div>
+        </div> FIXME: correct URL issue */}
 
       <div className={styles.popupDef} hidden={hidePopupDef}>
         <q cite='https://www.w3schools.com/whatis/whatis_fullstack.asp'>
