@@ -3,9 +3,9 @@ import { useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
 
-import profilePic from '../assets/images/Steven_Riggs_photo.jpg'
-
 import styles from '../styles/Welcome.module.scss'
+
+
 
 
 const Welcome = () => {
@@ -30,9 +30,9 @@ const Welcome = () => {
         </p>
       </div>
 
-      {/* <div className={styles.imageDiv} hidden={hideProfilePic}>
-        <Image src={profilePic} alt='Steven Riggs' />
-        </div> FIXME: correct URL issue */}
+      <div className={styles.imageDiv} hidden={hideProfilePic}>
+        <Image src={'/images/Steven_Riggs_photo.jpg'} alt='Steven Riggs' width={1008} height={1344} />
+      </div>
 
       <div className={styles.popupDef} hidden={hidePopupDef}>
         <q cite='https://www.w3schools.com/whatis/whatis_fullstack.asp'>

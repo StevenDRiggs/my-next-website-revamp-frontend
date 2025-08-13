@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import profilePic from '../assets/images/Steven_Riggs_photo.jpg'
-import thisWebsiteImg from '../assets/images/stevendriggs.com.png'
 
 import styles from '../styles/Portfolio.module.scss'
 
@@ -13,13 +11,13 @@ const Portfolio = () => {
       <div className={styles.portfolioGrid}>
         <div className={styles.portfolioItem}>
           <h3>This Website</h3>
-          <Image src={thisWebsiteImg} alt='This Website' />
+          <Image src={'/images/stevendriggs.com.png'} alt='This Website' width={1440} height={900} />
           <div className={styles.projectConnections}>
             <a href='portfolio/this_website_technologies' className={styles.faIcon}>
-              <img src='/images/tools-solid.svg' alt='Technologies Used' />
+              <Image src='/images/tools-solid.svg' alt='Technologies Used' width={512} height={512} />
             </a>
             <a href='https://github.com/StevenDRiggs/my-next-website-revamp.git' className={styles.gitHubMark} target='_blank' rel='noreferrer'>
-              <img src='/images/GitHub-Mark-64px.png' alt='See it on GitHub' />
+              <Image src='/images/GitHub-Mark-64px.png' alt='See it on GitHub' width={64} height={64} />
             </a>
           </div>
         </div>

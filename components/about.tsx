@@ -7,7 +7,6 @@ import striptags from 'striptags'
 import type { SyntheticEvent } from 'react'
 
 import { MY_LIFE_NOW, PERSONAL_INTERESTS, HOW_I_GOT_STARTED, NEXT_THINGS_TO_LEARN, SKILLS } from '../assets/documents/aboutMe'
-import croppedProfilePic from '../assets/images/Steven_Riggs_photo_cropped.png'
 
 import styles from '../styles/About.module.scss'
 
@@ -89,7 +88,7 @@ const About = () => {
       <div className={styles.detailsDiv}>
         <div id='profilePic'>
           <div id='hiderBlock' className={styles.hiderBlock} />
-          <Image src={croppedProfilePic} alt="" />
+          <Image src={'/images/Steven_Riggs_photo_cropped.png'} alt="" width={860} height={860} />
           <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(MY_LIFE_NOW).slice(0, 300)}...</p>`}} />
           <div data-name='personalInterests' className={styles.aboutText} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
           <div data-name='howIGotStarted' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
