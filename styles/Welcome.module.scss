@@ -2,13 +2,27 @@
 @use 'divSpecs';
 
 
+.flexContainer {
+  @include divSpecs.divSpecs;
+
+  flex-direction: column;
+  gap: 0;
+  min-height: 10rem;
+  height: 99vh;
+}
+
+.imageDiv {
+  width: 24rem;
+}
+
 .welcomeDiv {
   @include divSpecs.divSpecs;
 
+  min-height: 10rem;
   text-align: center;
   flex-direction: column;
   color: colorDefs.$white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   cursor: default;
 
   h1 {
@@ -34,20 +48,11 @@
   }
 }
 
-.imageDiv {
-  width: 1008px * 0.2;
-  height: 1344px * 0.2;
-  position: absolute;
-  top: 10%;
-  right: 15%;
-  z-index: 1;
-}
-
 .popupDef {
   max-width: 25ch;
   position: absolute;
   bottom: 25%;
-  right: 10%;
+  right: 30%;
   z-index: 2;
   background-color: colorDefs.$white;
   padding: 0.5em;;
