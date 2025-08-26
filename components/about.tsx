@@ -38,37 +38,39 @@ const About = () => {
     headingToColorize[index].classList.add(styles.headingSpanBeige)
   })
 
-  const showAboutText = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
-    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id || target.parentElement.parentElement.parentElement.id
+  const displaySelection = (selection: HTMLElement) => {
+    const displayDiv = document.querySelector(`.${styles.selectionDisplay}`)
 
-    const textDiv = document.querySelector(`div[data-name=${targetId}]`) as HTMLElement
-    const icon = document.querySelector(`div#${targetId} .iconGroup`) as HTMLElement
-    const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
+    let newInnerHTML
 
-    hiderBlock.style.zIndex = '1'
-    icon.style.opacity = '0.5'
-    textDiv.style.visibility = 'visible'
+    switch (selection.id || selection.firstElementChild.id) {
+      case 'whoIAm':
+        newInnerHTML = '<p>Who I Am</p>'
+        break
+      case 'whatIDo':
+        newInnerHTML = '<p>What I Do</p>'
+        break
+      case 'whatImGoodAt':
+        newInnerHTML = "<p>What I'm Good At</p>"
+        break
+      case 'whatIEnjoy':
+        newInnerHTML = "<p>What I Enjoy</p>"
+        break
+      case 'funFacts':
+        newInnerHTML = "<p>Additional Fun Facts</p>"
+        break
+      default:
+        newInnerHTML = '<p>Invalid Selection</p>'
+    }
+
+    displayDiv.innerHTML = newInnerHTML
   }
 
-  const hideAboutText = (event: SyntheticEvent) => {
+  const showText = (event: SyntheticEvent) => {
     const target = event.target as HTMLElement
-    const targetId: String = target.id || target.parentElement.id || target.parentElement.parentElement.id
+    const targetId: String = target.id // || target.parentElement.id || target.parentElement.parentElement.id || target.parentElement.parentElement.parentElement.id
 
-    const textDivs = Array.from(document.querySelectorAll(`div[data-name]`)) as HTMLElement[]
-    const icons = Array.from(document.querySelectorAll(`div.iconGroup`)) as HTMLElement[]
-    const hiderBlock = document.querySelector('#hiderBlock') as HTMLElement
-
-    textDivs.forEach(textDiv => textDiv.style.visibility = 'hidden')
-    icons.forEach(icon => icon.style.opacity = '1.0')
-    hiderBlock.style.zIndex = '-1'
-  }
-
-  const clickLongText = (event: SyntheticEvent) => {
-    const target = event.target as HTMLElement
-    const urlStub = target.parentElement.parentElement.dataset.url || target.parentElement.parentElement.parentElement.dataset.url
-
-    router.push(`/about/${urlStub}`)
+    displaySelection(target)
   }
 
   return (
@@ -77,54 +79,25 @@ const About = () => {
         {aboutMeString()}
       </h2>
 
-      <Link href='/about/xray' passHref>
-        <p className={styles.xrayInsert}>
-          Want to know more?
-          <br />
-          Check out my <a className={styles.techLink}>Personality Xray</a>
-        </p>
-      </Link>
-
-      <div className={styles.detailsDiv}>
-        <div id='profilePic'>
-          <div id='hiderBlock' className={styles.hiderBlock} />
-          <Image src={'/images/Steven_Riggs_photo_cropped.png'} alt="" width={860} height={860} />
-          <div data-name='myLifeNow' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(MY_LIFE_NOW).slice(0, 300)}...</p>`}} />
-          <div data-name='personalInterests' className={styles.aboutText} dangerouslySetInnerHTML={{__html: PERSONAL_INTERESTS}} />
-          <div data-name='howIGotStarted' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class=${styles.largeAboutText}>${striptags(HOW_I_GOT_STARTED).slice(0, 300)}...</p>`}} />
-          <div data-name='nextThingsToLearn' className={styles.aboutText} dangerouslySetInnerHTML={{__html: NEXT_THINGS_TO_LEARN}} />
-          <div data-name='skills' className={styles.aboutText} dangerouslySetInnerHTML={{__html: `<p class="${styles.largeAboutText}">${striptags(SKILLS).slice(0, 1500)}...</p>`}} />
-        </div>
-
-        <div id='myLifeNow' data-url='my_life_now' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
-          <div className='iconGroup'>
-            <h6>My Life Now</h6>
-            <i className={`fas fa-user-friends`}></i>
-          </div>
-        </div>
-        <div id='personalInterests' data-url='personal_interests' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={clickLongText}>
-          <div className='iconGroup'>
-            <h6>Personal Interests</h6>
-            <i className={`fas fa-gamepad`}></i>
-          </div>
-        </div>
-        <div id='howIGotStarted' data-url='how_i_got_started' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
-          <div className='iconGroup'>
-            <h6>How I Got Started</h6>
-            <i className={`fas fa-pencil-alt`}></i>
-          </div>
-        </div>
-        <div id='nextThingsToLearn' data-url='next_things_to_learn' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onTouchStart={clickLongText}>
-          <div className='iconGroup'>
-            <h6>Next Things I Want to Learn</h6>
-            <i className={`fas fa-school`}></i>
-          </div>
-        </div>
-        <div id='skills' data-url='skills' className={styles.icon} onMouseEnter={showAboutText} onMouseLeave={hideAboutText} onClick={clickLongText}>
-          <div className='iconGroup'>
-            <h6>My Skills</h6>
-            <i className={`fas fa-terminal`}></i>
-          </div>
+      <div className={styles.menuDiv}>
+        <ul className={styles.menu}>
+          <li className={styles.menuOption} onClick={showText}>
+            <h3 id='whoIAm'>Who I Am</h3>
+          </li>
+          <li className={styles.menuOption} onClick={showText}>
+            <h3 id='whatIDo'>What I Do</h3>
+          </li>
+          <li className={styles.menuOption} onClick={showText}>
+            <h3 id='whatImGoodAt'>What I'm Good At</h3>
+          </li>
+          <li className={styles.menuOption} onClick={showText}>
+            <h3 id='whatIEnjoy'>What I Enjoy</h3>
+          </li>
+          <li className={styles.menuOption} onClick={showText}>
+            <h3 id='funFacts'>Additional Fun Facts</h3>
+          </li>
+        </ul>
+        <div className={styles.selectionDisplay}>
         </div>
       </div>
     </div>

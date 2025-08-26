@@ -22,7 +22,7 @@ const Welcome = () => {
 
   return (
     <>
-      <div class={`bgDark ${styles.flexContainer}`}>
+      <div className={`bgDark ${styles.flexContainer}`}>
         <div className={styles.imageDiv}>
           <Image src={'/images/Steven_Riggs_photo_cropped.png'} alt='Steven Riggs' width={860} height={860} />
         </div>
