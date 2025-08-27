@@ -37,3 +37,6 @@ yarn-error.log*
 favicon.svg
 favicon.png
 Steven_Riggs_photo_cropped.jpg.svg
+
+# yarn
+.yarn/
