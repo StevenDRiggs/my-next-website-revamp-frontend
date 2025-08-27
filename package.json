@@ -12,17 +12,19 @@
   "dependencies": {
     "@react-hook/intersection-observer": "^3.1.1",
     "html-to-md": "^0.4.3",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^15.5.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "sass": "^1.35.2",
     "striptags": "^3.2.0"
   },
   "devDependencies": {
-    "@types/react": "17.0.14",
+    "@types/node": "24.3.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "jest": "^27.0.6",
-    "typescript": "4.3.5"
+    "typescript": "^5.9.2"
   }
 }

@@ -158,7 +158,7 @@ const Blog = ({ blogEntries }: BlogProps) => {
 
           <div className={styles.blogGrid}>
             {blogEntries.sort((a, b) => a.updated_at < b.updated_at ? 1 : 0).map((blogEntry: BlogEntry) => (
-              <Link href={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
+              <Link legacyBehavior href={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
                 <a>
                   <div className={styles.blogItem}>
                     <h4>{blogEntry.title}</h4>
