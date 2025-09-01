@@ -1,6 +1,6 @@
 import striptags from 'striptags'
 import Link from 'next/link'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -133,7 +133,6 @@ const Blog = ({ blogEntries }: BlogProps) => {
           <div className={hB ? 'active' : null} onClick={hBClick} />
         </div>
       </div>
-
       {hC ?
         <form className={styles.blogDiv} onSubmit={handleSubmit}>
           {token ?
@@ -162,7 +161,15 @@ const Blog = ({ blogEntries }: BlogProps) => {
                 <a>
                   <div className={styles.blogItem}>
                     <h4>{blogEntry.title}</h4>
-                    <Image src={blogEntry.image_url} width={300} height={200} alt={blogEntry.title} />
+                    <Image
+                      src={blogEntry.image_url}
+                      width={300}
+                      height={200}
+                      alt={blogEntry.title}
+                      style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                      }} />
                     <p>
                       {striptags(blogEntry.content).slice(0, 75) + '...'}
                     </p>
@@ -174,7 +181,7 @@ const Blog = ({ blogEntries }: BlogProps) => {
         </div>
       }
     </>
-  )
+  );
 }
 
 

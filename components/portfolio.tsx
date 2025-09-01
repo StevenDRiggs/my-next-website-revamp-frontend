@@ -1,4 +1,4 @@
-import Image from "next/legacy/image"
+import Image from "next/image"
 
 
 import styles from '../styles/Portfolio.module.scss'
@@ -11,13 +11,37 @@ const Portfolio = () => {
       <div className={styles.portfolioGrid}>
         <div className={styles.portfolioItem}>
           <h3>This Website</h3>
-          <Image src={'/images/stevendriggs.com.png'} alt='This Website' width={1440} height={900} />
+          <Image
+            src={'/images/stevendriggs.com.png'}
+            alt='This Website'
+            width={1440}
+            height={900}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <div className={styles.projectConnections}>
             <a href='portfolio/this_website_technologies' className={styles.faIcon}>
-              <Image src='/images/tools-solid.svg' alt='Technologies Used' width={512} height={512} />
+              <Image
+                src='/images/tools-solid.svg'
+                alt='Technologies Used'
+                width={512}
+                height={512}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </a>
             <a href='https://github.com/StevenDRiggs/my-next-website-revamp.git' className={styles.gitHubMark} target='_blank' rel='noreferrer'>
-              <Image src='/images/GitHub-Mark-64px.png' alt='See it on GitHub' width={64} height={64} />
+              <Image
+                src='/images/GitHub-Mark-64px.png'
+                alt='See it on GitHub'
+                width={64}
+                height={64}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </a>
           </div>
         </div>
@@ -32,7 +56,7 @@ const Portfolio = () => {
         </div>*/}
       </div>
     </div>
-  )
+  );
 }
 
 

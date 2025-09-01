@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useState } from 'react'
 import html2md from 'html-to-md'
 
@@ -137,7 +137,6 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
           <div className={hB ? 'active' : null} onClick={hBClick} />
         </div>
       </div>
-
       {hC ?
         <form className={styles.blogEntryDiv} onSubmit={handleSubmit}>
           {token ?
@@ -158,7 +157,15 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
         :
         <div className={styles.blogEntryDiv}>
           <figure>
-            <Image src={blogEntry.image_url} width={300} height={200} alt="" />
+            <Image
+              src={blogEntry.image_url}
+              width={300}
+              height={200}
+              alt=""
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             {blogEntry.photo_by !== 'not sourced' ? <figcaption dangerouslySetInnerHTML={{__html: blogEntry.photo_by}} /> : null}
           </figure>
 
@@ -170,7 +177,7 @@ const BlogEntryShowPage = ({ blogEntry }: { blogEntry: BlogEntry }) => {
         </div>
       }
     </>
-  )
+  );
 }
 
 

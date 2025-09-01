@@ -1,4 +1,4 @@
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useState } from 'react'
 
 import type { SyntheticEvent } from 'react'
@@ -24,7 +24,15 @@ const Welcome = () => {
     <>
       <div className={`bgDark ${styles.flexContainer}`}>
         <div className={styles.imageDiv}>
-          <Image src={'/images/Steven_Riggs_photo_cropped.png'} alt='Steven Riggs' width={860} height={860} />
+          <Image
+            src={'/images/Steven_Riggs_photo_cropped.png'}
+            alt='Steven Riggs'
+            width={860}
+            height={860}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
 
         <div id='home' className={styles.welcomeDiv}>
@@ -48,7 +56,7 @@ const Welcome = () => {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 
